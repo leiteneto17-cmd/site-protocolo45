@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ============================================================
+   PROTOCOLO 45 — Design System
+   Dark mode premium: azul profundo + cyan + amber CTAs
+   ============================================================ */
+
+/* ---------- Base palette ---------- */
+:root {
+  --background: #030712;
+  --foreground: #f1f5f9;
+
+  /* Brand blues */
+  --blue-deep: #0A1628;
+  --blue-royal: #1E40AF;
+  --blue-mid: #2563EB;
+  --cyan-vivid: #06B6D4;
+  --cyan-light: #67E8F9;
+
+  /* Amber (CTA exclusive) */
+  --amber: #F59E0B;
+  --amber-hover: #D97706;
+  --amber-glow: rgba(245, 158, 11, 0.45);
+  --amber-glow-strong: rgba(245, 158, 11, 0.25);
+
+  /* Surfaces */
+  --surface-0: #030712;
+  --surface-1: #0F172A;
+  --surface-2: #1E293B;
+  --surface-3: #334155;
+
+  /* Text */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  /* Semantic */
+  --success: #10B981;
+  --danger: #EF4444;
+  --danger-muted: rgba(239, 68, 68, 0.15);
+  --success-muted: rgba(16, 185, 129, 0.15);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(148, 163, 184, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+}
+
+/* ---------- Global resets ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--surface-0);
+  color: var(--text-primary);
+  font-family: var(--font-sans, "Inter", system-ui, sans-serif);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: #fff;
+}
+
+/* ---------- Scrollbar (Webkit) ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-0);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ============================================================
+   Utility classes
+   ============================================================ */
+
+/* Glassmorphism card */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-subtle {
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #60A5FA 0%, var(--cyan-vivid) 50%, var(--cyan-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, var(--amber) 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Amber CTA glow — the money button */
+.btn-cta {
+  background: linear-gradient(135deg, var(--amber) 0%, var(--amber-hover) 100%);
+  color: #0F172A;
+  font-weight: 700;
+  box-shadow:
+    0 0 20px var(--amber-glow),
+    0 0 60px var(--amber-glow-strong),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-cta:hover {
+  box-shadow:
+    0 0 30px var(--amber-glow),
+    0 0 80px var(--amber-glow-strong),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+.btn-cta:active {
+  transform: translateY(0);
+  box-shadow:
+    0 0 15px var(--amber-glow),
+    0 0 40px var(--amber-glow-strong);
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+/* Gradient mesh (Hero background) */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-mesh {
+  background: linear-gradient(
+    -45deg,
+    var(--surface-0),
+    #0c1e3d,
+    #0e2a4e,
+    #061e3f,
+    var(--surface-0)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Floating glow orbs */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out 2s infinite;
+}
+
+/* Pulse for CTA */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px var(--amber-glow),
+      0 0 60px var(--amber-glow-strong);
+  }
+  50% {
+    box-shadow:
+      0 0 30px var(--amber-glow),
+      0 0 80px rgba(245, 158, 11, 0.35),
+      0 0 120px rgba(245, 158, 11, 0.15);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--blue-royal), var(--cyan-vivid), var(--blue-royal));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Amber gradient border (pricing) */
+.gradient-border-amber::before {
+  background: linear-gradient(135deg, var(--amber), var(--cyan-vivid), var(--amber));
+}
+
+/* Section divider glow */
+.section-glow {
+  position: relative;
+}
+.section-glow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan-vivid), transparent);
+  opacity: 0.3;
+}
