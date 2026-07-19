@@ -4,17 +4,18 @@
 // sem precisar tocar nos componentes.
 // ============================================================
 
-/** URLs de checkout (Kiwify, Hotmart, Stripe, etc.)
- * ⚠️ PLACEHOLDERS — troque pelos links REAIS do checkout Kiwify (produto
- * "PROTOCOLO 45 Mensal&Anual"). Ver painel Kiwify → Link de pagamento. */
+/** URLs de checkout Kiwify (produto "PROTOCOLO 45"). Links REAIS.
+ * Só dois planos ativos hoje: Mensal e Anual (vitalício descontinuado). */
 export const CHECKOUT_URLS = {
-  mensal: "https://pay.kiwify.com.br/MENSAL_LINK",
-  anual: "https://pay.kiwify.com.br/ANUAL_LINK",
-  vitalicio: "https://pay.kiwify.com.br/VITALICIO_LINK",
+  mensal: "https://pay.kiwify.com.br/IFS2o9Z",
+  anual: "https://pay.kiwify.com.br/rysEs7d",
 };
 
-/** URL padrão (Hero CTA aponta para o plano recomendado/mais vendido) */
-export const CHECKOUT_URL = CHECKOUT_URLS.vitalicio;
+/** Página de vendas (Sales Page da Kiwify) */
+export const SALES_PAGE_URL = "https://kiwify.app/v9cQ7CY";
+
+/** URL padrão (Hero CTA aponta para o plano recomendado = Anual) */
+export const CHECKOUT_URL = CHECKOUT_URLS.anual;
 
 /** URL de login DO APP. A landing (protocolo45.com.br) e o app (Vercel) são
  * deploys separados — precisa ser absoluta, senão "Entrar" cai na própria

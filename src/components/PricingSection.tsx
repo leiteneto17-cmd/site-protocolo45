@@ -8,7 +8,6 @@ import {
   ShieldCheck,
   CreditCard,
   ArrowRight,
-  Infinity as InfinityIcon,
   Calendar,
 } from "lucide-react";
 import { CHECKOUT_URLS, GUARANTEE } from "@/lib/constants";
@@ -16,7 +15,7 @@ import { CHECKOUT_URLS, GUARANTEE } from "@/lib/constants";
 const plans = [
   {
     name: "Plano Mensal",
-    price: "6,90",
+    price: "7,90",
     period: "/mês",
     type: "Assinatura recorrente",
     description: "Ideal para testar a ferramenta e sentir o poder do cronograma no dia a dia.",
@@ -38,10 +37,10 @@ const plans = [
     price: "29,90",
     period: "/ano",
     type: "Pagamento único anual",
-    description: "Equivale a apenas R$ 2,49 por mês. Economia de mais de 60% comparado ao mensal.",
-    badge: "Mais de 60% de desconto",
+    description: "Equivale a apenas R$ 2,49 por mês. Economia de mais de 65% comparado ao mensal.",
+    badge: "Mais de 65% de desconto",
     icon: Zap,
-    highlight: false,
+    highlight: true,
     checkoutUrl: CHECKOUT_URLS.anual,
     details: [
       "Acesso completo por 12 meses",
@@ -52,26 +51,6 @@ const plans = [
       "Equivale a R$ 2,49/mês",
     ],
     buttonText: "Garantir Desconto Anual",
-  },
-  {
-    name: "Plano Vitalício",
-    price: "49,90",
-    period: "",
-    type: "Pagamento único. Sem mensalidade.",
-    description: "Acesso permanente para sempre, com todas as atualizações de algoritmos inclusas.",
-    badge: "Estude até passar",
-    icon: InfinityIcon,
-    highlight: true,
-    checkoutUrl: CHECKOUT_URLS.vitalicio,
-    details: [
-      "Acesso permanente e vitalício",
-      "Todas as futuras atualizações inclusas",
-      "Cronograma inteligente adaptativo",
-      "Revisões automatizadas FSRS-4.5",
-      "Suporte prioritário direto com o criador",
-      "Sem qualquer mensalidade ou taxa futura",
-    ],
-    buttonText: "Aproveitar Plano Vitalício",
   },
 ];
 
@@ -111,7 +90,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Pricing grid */}
-        <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
           {plans.map((plan, i) => {
             return (
               <motion.div
