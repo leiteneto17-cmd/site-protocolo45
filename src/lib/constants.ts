@@ -20,7 +20,7 @@ export const CHECKOUT_URL = CHECKOUT_URLS.anual;
 /** URL de login DO APP. A landing (protocolo45.com.br) e o app (Vercel) são
  * deploys separados — precisa ser absoluta, senão "Entrar" cai na própria
  * landing. Trocar aqui se o app ganhar domínio próprio (ex.: app.protocolo45.com.br). */
-export const LOGIN_URL = "https://protocolo45.vercel.app/login";
+export const LOGIN_URL = "https://app.protocolo45.com.br/login";
 
 /** Garantia */
 export const GUARANTEE = {
@@ -30,6 +30,5 @@ export const GUARANTEE = {
 
 /** Redes sociais / links externos */
 export const SOCIAL = {
-  instagram: "https://instagram.com/gpsdoconcurseiro",
+  instagram: "https://www.instagram.com/protocolo45_app/",
 };
-
