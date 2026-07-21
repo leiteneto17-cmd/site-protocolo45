@@ -18,14 +18,18 @@ const plans = [
     price: "7,90",
     period: "/mês",
     type: "Assinatura recorrente",
-    description: "Ideal para testar a ferramenta e sentir o poder do cronograma no dia a dia.",
-    badge: "Teste sem compromisso",
+    description: "Para executar uma semana de cada vez, com a rota renovada continuamente conforme seu desempenho.",
+    visibility: "Janela operacional móvel de 7 dias",
+    visibilityNote: "Você vê as missões detalhadas dos próximos 7 dias. A cada novo dia, outro dia da rota é liberado.",
+    badge: "Rota semanal",
     icon: Calendar,
     highlight: false,
     checkoutUrl: CHECKOUT_URLS.mensal,
     details: [
       "Acesso recorrente (cancele quando quiser)",
-      "Cronograma inteligente adaptativo",
+      "Próximos 7 dias detalhados",
+      "Visão resumida da jornada até a prova",
+      "Rota renovada diariamente",
       "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
       "Suporte via e-mail",
@@ -37,14 +41,18 @@ const plans = [
     price: "29,90",
     period: "/ano",
     type: "Pagamento único anual",
-    description: "Equivale a apenas R$ 2,49 por mês. Economia de mais de 65% comparado ao mensal.",
+    description: "Para enxergar a estratégia completa até a prova sem abrir mão dos recálculos diários.",
+    visibility: "Planejamento estratégico completo",
+    visibilityNote: "Você visualiza toda a projeção adaptativa até a prova, além da rota operacional da semana.",
     badge: "Mais de 65% de desconto",
     icon: Zap,
     highlight: true,
     checkoutUrl: CHECKOUT_URLS.anual,
     details: [
       "Acesso completo por 12 meses",
-      "Cronograma inteligente adaptativo",
+      "Projeção completa até a prova",
+      "Calendário detalhado de longo prazo",
+      "Rota recalculada após cada resultado",
       "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
       "Suporte prioritário",
@@ -135,6 +143,21 @@ export default function PricingSection() {
                       {plan.description}
                     </p>
 
+                    <div className={`mb-6 rounded-xl border p-3 ${
+                      plan.highlight
+                        ? "border-amber-400/25 bg-amber-400/[0.06]"
+                        : "border-cyan-400/20 bg-cyan-400/[0.05]"
+                    }`}>
+                      <div className={`text-xs font-bold ${
+                        plan.highlight ? "text-[var(--amber)]" : "text-cyan-300"
+                      }`}>
+                        {plan.visibility}
+                      </div>
+                      <p className="mt-1 text-[11px] leading-relaxed text-[var(--text-secondary)]">
+                        {plan.visibilityNote}
+                      </p>
+                    </div>
+
                     {/* Price display */}
                     <div className="mb-6 flex flex-col">
                       <div className="flex items-baseline gap-1">
@@ -191,6 +214,12 @@ export default function PricingSection() {
             );
           })}
         </div>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-[var(--text-muted)]">
+          Nos dois planos, o cronograma é vivo: conclusões, acertos, dificuldades
+          e mudanças de disponibilidade recalculam a rota. A diferença está no
+          horizonte detalhado que você pode visualizar.
+        </p>
 
         {/* Guarantee and Secure badge */}
         <div className="mt-16 flex flex-col items-center gap-4 max-w-lg mx-auto">

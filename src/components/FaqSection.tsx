@@ -11,6 +11,11 @@ import {
 
 const faqs = [
   {
+    question: "Qual é a diferença entre o plano mensal e o anual?",
+    answer:
+      "No Mensal, você executa uma janela operacional móvel: os próximos 7 dias aparecem detalhados e a rota libera um novo dia diariamente, sempre recalculada pelos seus resultados. No Anual, além da rota semanal, você visualiza a projeção estratégica completa até a prova. Os dois planos incluem o Motor P45, revisões FSRS e recálculo adaptativo; o que muda é o horizonte detalhado de visualização.",
+  },
+  {
     question: "Como funciona o algoritmo de revisão FSRS?",
     answer:
       "O FSRS-6 é o subsistema de memória do Motor P45: estima a probabilidade de recuperação e agenda cada revisão conforme o desempenho registrado. Ele não manda sozinho no seu dia. O Motor P45 limita a carga de revisões e preserva tempo para cobertura do edital e questões.",
