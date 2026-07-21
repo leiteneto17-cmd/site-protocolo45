@@ -28,7 +28,7 @@ const plans = [
     details: [
       "Acesso recorrente (cancele quando quiser)",
       "Próximos 7 dias detalhados",
-      "Visão resumida da jornada até a prova",
+      "Visão geral do progresso e da cobertura",
       "Rota renovada diariamente",
       "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
