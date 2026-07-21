@@ -18,7 +18,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "PROTOCOLO 45 — O método matemático e blindado contra o esquecimento",
   description:
-    "O único sistema inteligente de estudos que se adapta ao seu cérebro, organiza suas revisões científicas (FSRS-4.5) e recalcula a sua rota automaticamente sem acumular matéria.",
+    "Sistema de estudos que equilibra cobertura, questões e revisões adaptativas FSRS-6, recalculando a rota conforme seus resultados.",
   keywords: [
     "concurso público",
     "estudos",

@@ -74,7 +74,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              O <span className="text-white font-semibold">PROTOCOLO 45</span> é o único sistema inteligente de estudos que se adapta ao seu cérebro, organiza suas revisões científicas (FSRS-4.5) e recalcula a sua rota automaticamente sem acumular matéria.
+              O <span className="text-white font-semibold">PROTOCOLO 45</span> equilibra cobertura do edital, questões e revisões adaptativas FSRS-6, recalculando sua rota conforme os resultados reais.
             </motion.p>
 
             {/* CTAs */}

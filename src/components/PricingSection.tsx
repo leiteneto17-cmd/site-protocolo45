@@ -26,7 +26,7 @@ const plans = [
     details: [
       "Acesso recorrente (cancele quando quiser)",
       "Cronograma inteligente adaptativo",
-      "Revisões automatizadas FSRS-4.5",
+      "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
       "Suporte via e-mail",
     ],
@@ -45,7 +45,7 @@ const plans = [
     details: [
       "Acesso completo por 12 meses",
       "Cronograma inteligente adaptativo",
-      "Revisões automatizadas FSRS-4.5",
+      "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
       "Suporte prioritário",
       "Equivale a R$ 2,49/mês",

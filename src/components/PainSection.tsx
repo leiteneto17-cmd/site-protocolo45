@@ -39,7 +39,7 @@ const solutions = [
   },
   {
     icon: CheckCircle2,
-    text: "Revisões no momento exato antes de esquecer — FSRS-4.5 calcula para você.",
+    text: "Revisões adaptativas por risco, sem engolir o restante do plano.",
   },
   {
     icon: CheckCircle2,

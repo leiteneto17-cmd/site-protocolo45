@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "Como funciona o algoritmo de revisão FSRS?",
     answer:
-      "O FSRS (Free Spaced Repetition Scheduler) versão 4.5 é o algoritmo mais avançado de repetição espaçada disponível — ele superou o SM-2 do Anki em testes científicos. Ele modela matematicamente a curva de esquecimento do seu cérebro e calcula o momento ideal para revisar cada conteúdo, antes que você esqueça. Conforme você estuda, o algoritmo se adapta ao seu desempenho real: se você acertou fácil, o intervalo aumenta; se errou, diminui. Tudo automático, tudo calculado.",
+      "O FSRS-6 é o subsistema de memória do Motor P45: estima a probabilidade de recuperação e agenda cada revisão conforme o desempenho registrado. Ele não manda sozinho no seu dia. O Motor P45 limita a carga de revisões e preserva tempo para cobertura do edital e questões.",
   },
   {
     question: "E se eu perder dias de estudo?",

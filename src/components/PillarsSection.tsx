@@ -17,10 +17,10 @@ const pillars = [
   {
     icon: Brain,
     title: "Revisões Científicas",
-    subtitle: "FSRS-4.5 — além do Anki",
+    subtitle: "FSRS-6 integrado ao Motor P45",
     description:
       "O algoritmo FSRS calcula exatamente quando você vai esquecer cada conteúdo e programa a revisão antes disso acontecer. Sem adivinhação, sem 'acho que preciso revisar'. Retenção máxima, esforço mínimo.",
-    highlight: "Revisão programada no momento exato de esquecimento",
+    highlight: "Memória adaptativa com carga diária protegida",
     color: "blue",
   },
   {
