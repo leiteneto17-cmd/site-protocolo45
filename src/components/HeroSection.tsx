@@ -102,31 +102,7 @@ export default function HeroSection() {
               </button>
             </motion.div>
 
-            {/* Social proof mini */}
-            <motion.div
-              variants={itemVariants}
-              className="mt-10 flex items-center gap-4 justify-center lg:justify-start"
-            >
-              <div className="flex -space-x-2">
-                {[
-                  "bg-blue-500",
-                  "bg-cyan-500",
-                  "bg-amber-500",
-                  "bg-emerald-500",
-                ].map((bg, i) => (
-                  <div
-                    key={i}
-                    className={`w-8 h-8 rounded-full ${bg} border-2 border-[var(--surface-0)] flex items-center justify-center text-[10px] font-bold text-white`}
-                  >
-                    {["P", "A", "L", "C"][i]}
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-[var(--text-muted)]">
-                <span className="text-white font-medium">+120</span> concurseiros já
-                estão usando
-              </p>
-            </motion.div>
+
           </motion.div>
 
           {/* Right — App mockup */}
