@@ -16,9 +16,14 @@ const faqs = [
       "No Mensal, você executa uma janela operacional móvel: os próximos 7 dias aparecem detalhados e a rota libera um novo dia diariamente, sempre recalculada pelos seus resultados. No Anual, além da rota semanal, você visualiza a projeção estratégica completa até a prova. Os dois planos incluem o Motor P45, revisões FSRS e recálculo adaptativo; o que muda é o horizonte detalhado de visualização.",
   },
   {
+    question: "O que acontece depois do pagamento?",
+    answer:
+      "O pagamento é processado pela Kiwify. Após a confirmação, você recebe as instruções de acesso ao Protocolo 45. O plano mensal é recorrente e pode ser cancelado; o anual libera o acesso por 12 meses em pagamento único.",
+  },
+  {
     question: "Como funciona o algoritmo de revisão FSRS?",
     answer:
-      "O FSRS-6 é o subsistema de memória do Motor P45: estima a probabilidade de recuperação e agenda cada revisão conforme o desempenho registrado. Ele não manda sozinho no seu dia. O Motor P45 limita a carga de revisões e preserva tempo para cobertura do edital e questões.",
+      "O FSRS-6 é o subsistema de memória do Motor P45: estima a retenção e agenda cada revisão conforme o desempenho registrado. Ele não manda sozinho no seu dia. O Motor P45 limita a carga de revisões e preserva tempo para cobertura do edital e questões.",
   },
   {
     question: "E se eu perder dias de estudo?",
@@ -33,7 +38,7 @@ const faqs = [
   {
     question: "Funciona para qualquer concurso?",
     answer:
-      "Sim. O Protocolo 45 funciona para qualquer concurso que tenha um edital com matérias e submatérias. O sistema analisa o edital (pode ser de qualquer banca — CESPE, FCC, FGV, VUNESP, etc.), extrai a estrutura de conteúdo, e monta o cronograma personalizado com base nos pesos, sua disponibilidade de horas e a data da prova. Funciona desde concursos de nível médio até carreiras jurídicas e fiscais.",
+      "O Protocolo 45 já oferece missões estruturadas no catálogo e também permite organizar preparações fora dele. Nos concursos curados, matérias e pesos são preservados conforme a fonte disponível. O catálogo cresce por etapas e cada novo edital pode exigir atualização.",
   },
 ];
 

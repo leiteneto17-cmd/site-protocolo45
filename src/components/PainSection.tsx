@@ -20,7 +20,7 @@ const painPoints = [
   },
   {
     icon: XCircle,
-    text: "Revisa \"quando dá vontade\", não quando a ciência manda. Esquece tudo na prova.",
+    text: "Revisa sem critério e não sabe como equilibrar memória, questões e avanço no edital.",
   },
   {
     icon: XCircle,
@@ -31,7 +31,7 @@ const painPoints = [
 const solutions = [
   {
     icon: CheckCircle2,
-    text: "Perdeu um dia? O algoritmo recalcula a rota silenciosamente. Zero culpa, zero acúmulo.",
+    text: "Perdeu um dia? O Motor P45 recalcula as próximas missões em vez de empilhar todo o atraso.",
   },
   {
     icon: CheckCircle2,
@@ -61,7 +61,7 @@ export default function PainSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="metodo" className="relative py-24 lg:py-32 section-glow">
+    <section id="metodo" className="relative overflow-hidden py-24 lg:py-32 section-glow">
       {/* Subtle background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--surface-0)] via-[var(--surface-1)] to-[var(--surface-0)]" />
 
@@ -75,19 +75,18 @@ export default function PainSection() {
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-red-500/10 text-red-400 border border-red-500/20 mb-4">
             <AlertTriangle className="w-3 h-3" />
-            A verdade que ninguém conta
+            O problema dos cronogramas fixos
           </span>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
-            Por que{" "}
-            <span className="text-red-400">93% dos concurseiros</span>{" "}
-            desistem?
+            Um imprevisto não deveria{" "}
+            <span className="text-red-400">destruir seu planejamento.</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Não é falta de inteligência. É falta de um sistema que não te
-            abandona quando você falha.
+            A rotina muda. Seu plano precisa registrar o que foi feito e
+            reorganizar o que vem depois.
           </p>
         </motion.div>
 
@@ -107,7 +106,7 @@ export default function PainSection() {
               <div>
                 <h3 className="text-lg font-bold text-red-400">Método Tradicional</h3>
                 <p className="text-xs text-[var(--text-muted)]">
-                  O modelo que gera frustração
+                  Quando o calendário não se adapta
                 </p>
               </div>
             </div>
@@ -130,13 +129,6 @@ export default function PainSection() {
               ))}
             </div>
 
-            {/* Emotional kicker */}
-            <div className="mt-6 p-4 rounded-lg bg-red-500/[0.05] border border-red-500/10">
-              <p className="text-sm text-red-300/80 italic leading-relaxed">
-                &ldquo;Perdi 3 meses de estudo porque pulei uma semana e a
-                planilha virou um monstro. Achei que o problema era eu.&rdquo;
-              </p>
-            </div>
           </motion.div>
 
           {/* ✅ With Protocolo 45 */}
@@ -155,7 +147,7 @@ export default function PainSection() {
                   Protocolo 45
                 </h3>
                 <p className="text-xs text-[var(--text-muted)]">
-                  O sistema que trabalha com você
+                  Uma rota que acompanha sua execução
                 </p>
               </div>
             </div>
@@ -178,13 +170,6 @@ export default function PainSection() {
               ))}
             </div>
 
-            {/* Positive kicker */}
-            <div className="mt-6 p-4 rounded-lg bg-cyan-500/[0.05] border border-cyan-500/10">
-              <p className="text-sm text-cyan-300/80 italic leading-relaxed">
-                &ldquo;Voltei de 5 dias sem estudar e o Protocolo 45 já tinha ajustado
-                tudo. Não precisei refazer nenhuma planilha.&rdquo;
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>

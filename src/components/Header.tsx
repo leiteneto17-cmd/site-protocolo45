@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { CHECKOUT_URL, LOGIN_URL } from "@/lib/constants";
 
 const navLinks = [
-  { label: "Método", href: "#metodo" },
-  { label: "Pilares", href: "#pilares" },
+  { label: "Produto", href: "#produto" },
+  { label: "Como funciona", href: "#como-funciona" },
   { label: "Sobre", href: "#jornada" },
+  { label: "Planos", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -57,6 +58,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
+                type="button"
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className="px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-white rounded-lg hover:bg-white/5 transition-colors"
@@ -79,15 +81,18 @@ export default function Header() {
               href={CHECKOUT_URL}
               className="btn-cta inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm"
             >
-              Começar Agora
+              Criar meu plano
             </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 text-[var(--text-secondary)] hover:text-white"
             aria-label="Menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -97,6 +102,7 @@ export default function Header() {
       {/* Mobile nav overlay */}
       {mobileOpen && (
         <motion.div
+          id="mobile-navigation"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -105,6 +111,7 @@ export default function Header() {
           <div className="px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <button
+                type="button"
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className="block w-full text-left px-4 py-3 text-[var(--text-secondary)] hover:text-white hover:bg-white/5 rounded-lg transition-colors"
@@ -123,7 +130,7 @@ export default function Header() {
                 href={CHECKOUT_URL}
                 className="btn-cta block text-center px-4 py-3 rounded-lg text-sm"
               >
-                Começar Agora
+                Criar meu plano
               </a>
             </div>
           </div>

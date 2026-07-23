@@ -83,17 +83,18 @@ export default function PricingSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-[var(--amber)] border border-amber-500/25 mb-4">
-            Oferta Especial de Lançamento
+            Planos transparentes
           </span>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
-            Escolha o seu plano e{" "}
-            <span className="gradient-text">destrave sua constância</span>
+            Escolha quanto da sua rota{" "}
+            <span className="gradient-text">você quer visualizar</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Mais barato que um café por mês para ter um assistente de estudos inteligente programando seus passos.
+            Os dois planos usam o mesmo Motor P45. A diferença está no
+            horizonte detalhado disponível para consulta.
           </p>
         </motion.div>
 
@@ -236,6 +237,11 @@ export default function PricingSection() {
           </div>
           <p className="text-xs text-[var(--text-muted)] text-center leading-relaxed">
             {GUARANTEE.text}
+          </p>
+          <p className="text-xs text-[var(--text-secondary)] text-center leading-relaxed">
+            O checkout é processado pela Kiwify. Após a confirmação do
+            pagamento, você recebe as instruções de acesso. No plano mensal, a
+            cobrança é recorrente e pode ser cancelada.
           </p>
         </div>
       </div>

@@ -1,19 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://protocolo45.com.br"),
@@ -34,7 +20,6 @@ export const metadata: Metadata = {
     "repetição espaçada",
     "revisão para concursos",
     "questões de concurso",
-    "aprovação em concurso",
     "Protocolo 45",
   ],
 
@@ -52,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Protocolo 45",
     images: [
       {
-        url: "/og-protocolo45.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Protocolo 45 — cronograma adaptativo para concursos",
@@ -65,7 +50,7 @@ export const metadata: Metadata = {
     title: "PROTOCOLO 45 — Estude com ciência, avance com consistência",
     description:
       "Teoria, questões e revisões FSRS-6 in uma rota que se adapta ao seu desempenho.",
-    images: ["/og-protocolo45.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
@@ -75,10 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${inter.variable} ${outfit.variable} antialiased`}
-    >
+    <html lang="pt-BR" className="antialiased">
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );

@@ -55,7 +55,7 @@ export default function HeroSection() {
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="glass-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-[var(--cyan-vivid)] border border-cyan-500/20">
                 <span className="w-2 h-2 rounded-full bg-[var(--cyan-vivid)] animate-pulse" />
-                Sistema de Estudos Inteligente
+                Planejamento adaptativo para concursos
               </span>
             </motion.div>
 
@@ -65,7 +65,7 @@ export default function HeroSection() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight mb-6"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              O método matemático e{" "}
+              O método matemático{" "}
               <span className="gradient-text">blindado contra o esquecimento.</span>
             </motion.h1>
 
@@ -74,7 +74,10 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              O <span className="text-white font-semibold">PROTOCOLO 45</span> equilibra cobertura do edital, questões e revisões adaptativas FSRS-6, recalculando sua rota conforme os resultados reais.
+              O <span className="text-white font-semibold">PROTOCOLO 45</span>{" "}
+              transforma seu concurso, seu tempo disponível e seus resultados
+              em missões diárias de teoria, questões e revisão. Quando sua
+              rotina muda, o plano recalcula a próxima rota.
             </motion.p>
 
             {/* CTAs */}
@@ -86,18 +89,18 @@ export default function HeroSection() {
                 href={CHECKOUT_URL}
                 className="btn-cta animate-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold"
               >
-                Começar Agora
+                Criar meu plano de estudos
                 <ArrowRight className="w-5 h-5" />
               </a>
               <button
                 onClick={() =>
                   document
-                    .querySelector("#pilares")
+                    .querySelector("#produto")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-medium text-[var(--text-secondary)] border border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all"
               >
-                Ver como funciona
+                Ver o Protocolo funcionando
                 <ChevronDown className="w-5 h-5" />
               </button>
             </motion.div>
@@ -110,7 +113,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
-            className="relative hidden lg:block"
+            className="relative mx-auto w-full max-w-xl lg:block"
           >
             {/* Glow behind mockup */}
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-royal)] via-[var(--cyan-vivid)] to-[var(--blue-mid)] opacity-20 blur-[80px] rounded-3xl" />
@@ -133,12 +136,12 @@ export default function HeroSection() {
                   {/* Header */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-[var(--text-muted)]">Bom dia, Paulo 👋</p>
+                      <p className="text-xs text-[var(--text-muted)]">Missão de hoje</p>
                       <p className="text-sm font-semibold text-white">Seu plano para hoje</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-[var(--text-muted)]">Streak</p>
-                      <p className="text-lg font-bold text-[var(--amber)]">🔥 12 dias</p>
+                      <p className="text-xs text-[var(--text-muted)]">Rota diária</p>
+                      <p className="text-sm font-bold text-[var(--amber)]">3 missões</p>
                     </div>
                   </div>
 
@@ -184,6 +187,10 @@ export default function HeroSection() {
                       />
                     </div>
                   </div>
+                  <p className="text-[10px] leading-relaxed text-[var(--text-muted)]">
+                    Demonstração ilustrativa da rota. O conteúdo varia conforme
+                    o concurso, a disponibilidade e o histórico do aluno.
+                  </p>
                 </div>
               </div>
             </div>

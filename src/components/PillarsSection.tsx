@@ -10,8 +10,8 @@ const pillars = [
     title: "Priorização Inteligente",
     subtitle: "Score dinâmico por submatéria",
     description:
-      "O sistema calcula um Score para cada tópico combinando peso do edital, incidência da banca, sua dificuldade pessoal e proximidade da prova. Você estuda o que realmente importa — não o que parece importante.",
-    highlight: "Score = peso × incidência × dificuldade × urgência",
+      "O Motor P45 combina os pesos oficiais disponíveis, seu desempenho, o estágio do conteúdo e a proximidade da prova. A incidência histórica aparece como orientação para o aluno, sem comandar o planejamento.",
+    highlight: "Evidência histórica orienta; não governa a rota",
     color: "cyan",
   },
   {
@@ -19,7 +19,7 @@ const pillars = [
     title: "Revisões Científicas",
     subtitle: "FSRS-6 integrado ao Motor P45",
     description:
-      "O algoritmo FSRS calcula exatamente quando você vai esquecer cada conteúdo e programa a revisão antes disso acontecer. Sem adivinhação, sem 'acho que preciso revisar'. Retenção máxima, esforço mínimo.",
+      "O FSRS estima a retenção de cada conteúdo a partir do seu histórico e agenda revisões em intervalos adaptativos. O Motor P45 protege espaço para teoria e questões dentro da carga disponível.",
     highlight: "Memória adaptativa com carga diária protegida",
     color: "blue",
   },
@@ -28,8 +28,8 @@ const pillars = [
     title: "Flexibilidade Real",
     subtitle: "Recálculo automático em tempo real",
     description:
-      "Perdeu um dia? Ficou doente uma semana? O cronograma não quebra — ele se recalcula. Funciona em ciclos adaptativos, não como calendário fixo. Sem culpa, sem matéria acumulada, sem pânico.",
-    highlight: "Cronograma que nunca quebra — funciona em ciclos",
+      "Perdeu um dia ou precisou mudar seus horários? A rota é recalculada a partir do que foi realmente concluído, preservando prioridades e revisões futuras.",
+    highlight: "Recálculo a partir da execução real",
     color: "amber",
   },
 ];
@@ -100,7 +100,7 @@ export default function PillarsSection() {
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
             Cada pilar resolve uma dimensão diferente do problema. Juntos, formam
-            o sistema mais inteligente de estudos para concursos.
+            uma rota clara para decidir o que estudar hoje.
           </p>
         </motion.div>
 
