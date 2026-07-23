@@ -9,6 +9,7 @@ import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import FinalCtaSection from "@/components/FinalCtaSection";
+import ContestCatalogSection from "@/components/ContestCatalogSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <ContestCatalogSection />
         <ProductDemoSection />
         <PainSection />
         <PillarsSection />
