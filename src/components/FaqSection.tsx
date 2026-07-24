@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "Qual é a diferença entre o plano mensal e o anual?",
     answer:
-      "No Mensal, você executa uma janela operacional móvel: os próximos 7 dias aparecem detalhados e a rota libera um novo dia diariamente, sempre recalculada pelos seus resultados. No Anual, além da rota semanal, você visualiza a projeção estratégica completa até a prova. Os dois planos incluem o Motor P45, revisões FSRS e recálculo adaptativo; o que muda é o horizonte detalhado de visualização.",
+      "No Mensal, você executa uma janela operacional móvel: os próximos 7 dias aparecem detalhados e a rota libera um novo dia diariamente, sempre recalculada pelos seus resultados. No Trimestral e no Anual, além da rota semanal, você visualiza a projeção estratégica completa até a prova. Todos os planos incluem o Motor P45, revisões FSRS e recálculo adaptativo; o que muda é o horizonte detalhado de visualização.",
   },
   {
     question: "O que acontece depois do pagamento?",

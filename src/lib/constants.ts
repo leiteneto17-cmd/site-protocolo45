@@ -5,10 +5,11 @@
 // ============================================================
 
 /** URLs de checkout Kiwify (produto "PROTOCOLO 45"). Links REAIS.
- * Só dois planos ativos hoje: Mensal e Anual (vitalício descontinuado). */
+ * Três planos: Mensal, Trimestral e Anual (vitalício descontinuado). */
 export const CHECKOUT_URLS = {
-  mensal: "https://pay.kiwify.com.br/IFS2o9Z",
-  anual: "https://pay.kiwify.com.br/rysEs7d",
+  mensal: "https://pay.kiwify.com.br/lbxV3PJ",
+  trimestral: "https://pay.kiwify.com.br/UEKtIOs",
+  anual: "https://pay.kiwify.com.br/4UnTvl2",
 };
 
 /** Página de vendas (Sales Page da Kiwify) */

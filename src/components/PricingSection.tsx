@@ -15,7 +15,7 @@ import { CHECKOUT_URLS, GUARANTEE } from "@/lib/constants";
 const plans = [
   {
     name: "Plano Mensal",
-    price: "7,90",
+    price: "9,90",
     period: "/mês",
     type: "Assinatura recorrente",
     description: "Para executar uma semana de cada vez, com a rota renovada continuamente conforme seu desempenho.",
@@ -37,14 +37,38 @@ const plans = [
     buttonText: "Experimentar Mensal",
   },
   {
+    name: "Plano Trimestral",
+    price: "19,90",
+    period: "/trimestre",
+    type: "Assinatura recorrente",
+    description: "Um ciclo de estudo inteiro com a estratégia completa até a prova e os recálculos diários.",
+    visibility: "Planejamento estratégico completo",
+    visibilityNote: "Você visualiza toda a projeção adaptativa até a prova, além da rota operacional da semana.",
+    badge: "Economize 33%",
+    icon: Calendar,
+    highlight: false,
+    checkoutUrl: CHECKOUT_URLS.trimestral,
+    details: [
+      "Acesso completo por 3 meses",
+      "Projeção completa até a prova",
+      "Calendário detalhado de longo prazo",
+      "Rota recalculada após cada resultado",
+      "Revisões adaptativas FSRS-6",
+      "Painel de controle e estatísticas",
+      "Suporte via e-mail",
+      "Equivale a R$ 6,63/mês",
+    ],
+    buttonText: "Assinar Trimestral",
+  },
+  {
     name: "Plano Anual",
-    price: "29,90",
+    price: "49,90",
     period: "/ano",
-    type: "Pagamento único anual",
+    type: "Assinatura anual",
     description: "Para enxergar a estratégia completa até a prova sem abrir mão dos recálculos diários.",
     visibility: "Planejamento estratégico completo",
     visibilityNote: "Você visualiza toda a projeção adaptativa até a prova, além da rota operacional da semana.",
-    badge: "Mais de 65% de desconto",
+    badge: "58% de desconto",
     icon: Zap,
     highlight: true,
     checkoutUrl: CHECKOUT_URLS.anual,
@@ -56,7 +80,7 @@ const plans = [
       "Revisões adaptativas FSRS-6",
       "Painel de controle e estatísticas",
       "Suporte prioritário",
-      "Equivale a R$ 2,49/mês",
+      "Equivale a R$ 4,16/mês",
     ],
     buttonText: "Garantir Desconto Anual",
   },
@@ -93,13 +117,13 @@ export default function PricingSection() {
             <span className="gradient-text">você quer visualizar</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Os dois planos usam o mesmo Motor P45. A diferença está no
-            horizonte detalhado disponível para consulta.
+            Todos os planos usam o mesmo Motor P45. A diferença está no
+            compromisso e no horizonte detalhado disponível.
           </p>
         </motion.div>
 
         {/* Pricing grid */}
-        <div className="grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto">
           {plans.map((plan, i) => {
             return (
               <motion.div
@@ -217,7 +241,7 @@ export default function PricingSection() {
         </div>
 
         <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-[var(--text-muted)]">
-          Nos dois planos, o cronograma é vivo: conclusões, acertos, dificuldades
+          Em todos os planos, o cronograma é vivo: conclusões, acertos, dificuldades
           e mudanças de disponibilidade recalculam a rota. A diferença está no
           horizonte detalhado que você pode visualizar.
         </p>
