@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { CHECKOUT_URL } from "@/lib/constants";
+import { TRIAL_ENABLED, TRIAL_URL } from "@/lib/constants";
 
 const containerVariants = {
   hidden: {},
@@ -99,22 +99,36 @@ export default function HeroSection() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <a
-                href={CHECKOUT_URL}
-                className="btn-cta animate-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold"
-              >
-                Criar meu plano de estudos
-                <ArrowRight className="w-5 h-5" />
-              </a>
+              {TRIAL_ENABLED ? (
+                <a
+                  href={TRIAL_URL}
+                  className="btn-cta animate-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold"
+                >
+                  Começar 7 dias grátis
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              ) : (
+                <button
+                  onClick={() =>
+                    document
+                      .querySelector("#pricing")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="btn-cta animate-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold"
+                >
+                  Ver planos a partir de R$ 9,90
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              )}
               <button
                 onClick={() =>
                   document
-                    .querySelector("#produto")
+                    .querySelector(TRIAL_ENABLED ? "#pricing" : "#produto")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-medium text-[var(--text-secondary)] border border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all"
               >
-                Ver o Protocolo funcionando
+                {TRIAL_ENABLED ? "Ver planos" : "Ver o Protocolo funcionando"}
                 <ChevronDown className="w-5 h-5" />
               </button>
             </motion.div>

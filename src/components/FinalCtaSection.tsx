@@ -1,5 +1,5 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import { CHECKOUT_URL, GUARANTEE } from "@/lib/constants";
+import { CHECKOUT_URLS, GUARANTEE } from "@/lib/constants";
 
 export default function FinalCtaSection() {
   return (
@@ -17,12 +17,16 @@ export default function FinalCtaSection() {
             de estudo que você já tem.
           </p>
           <a
-            href={CHECKOUT_URL}
+            href={CHECKOUT_URLS.mensal}
             className="btn-cta inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base"
           >
-            Criar meu plano de estudos
+            Começar por R$ 9,90
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </a>
+          <p className="mt-3 text-xs text-[var(--text-muted)]">
+            Assinatura mensal, cancele quando quiser. Prefere o trimestral ou o
+            anual? Eles estão logo acima, na seção de planos.
+          </p>
           <p className="mt-5 flex items-center justify-center gap-2 text-xs text-[var(--text-secondary)]">
             <ShieldCheck className="h-4 w-4 text-emerald-400" aria-hidden="true" />
             {GUARANTEE.days} dias de garantia

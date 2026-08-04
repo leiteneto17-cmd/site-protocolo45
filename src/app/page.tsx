@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import FinalCtaSection from "@/components/FinalCtaSection";
 import ContestCatalogSection from "@/components/ContestCatalogSection";
 import ScopeSection from "@/components/ScopeSection";
+import TrialSection from "@/components/TrialSection";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <PillarsSection />
         <HowItWorksSection />
         <JourneySection />
+        <TrialSection />
         <PricingSection />
         <FaqSection />
         <FinalCtaSection />

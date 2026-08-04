@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Compass, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CHECKOUT_URL, LOGIN_URL } from "@/lib/constants";
+import { LOGIN_URL } from "@/lib/constants";
 
 const navLinks = [
   { label: "O que é", href: "#escopo" },
@@ -79,12 +79,13 @@ export default function Header() {
             >
               Entrar
             </Button>
-            <a
-              href={CHECKOUT_URL}
+            <button
+              type="button"
+              onClick={() => handleNavClick("#pricing")}
               className="btn-cta inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm"
             >
-              Criar meu plano
-            </a>
+              Começar por R$ 9,90
+            </button>
           </div>
 
           {/* Mobile hamburger */}
@@ -128,12 +129,13 @@ export default function Header() {
               >
                 Entrar
               </a>
-              <a
-                href={CHECKOUT_URL}
-                className="btn-cta block text-center px-4 py-3 rounded-lg text-sm"
+              <button
+                type="button"
+                onClick={() => handleNavClick("#pricing")}
+                className="btn-cta block w-full text-center px-4 py-3 rounded-lg text-sm"
               >
-                Criar meu plano
-              </a>
+                Começar por R$ 9,90
+              </button>
             </div>
           </div>
         </motion.div>
