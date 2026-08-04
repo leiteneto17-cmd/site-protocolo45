@@ -35,7 +35,7 @@ const solutions = [
   },
   {
     icon: CheckCircle2,
-    text: "Sem bola de neve: o cronograma funciona em ciclos adaptativos, não como calendário fixo.",
+    text: "Sem bola de neve: a rota funciona em ciclos adaptativos, não como calendário fixo.",
   },
   {
     icon: CheckCircle2,

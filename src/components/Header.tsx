@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { CHECKOUT_URL, LOGIN_URL } from "@/lib/constants";
 
 const navLinks = [
+  { label: "O que é", href: "#escopo" },
   { label: "Produto", href: "#produto" },
   { label: "Concursos", href: "#catalogo" },
   { label: "Como funciona", href: "#como-funciona" },

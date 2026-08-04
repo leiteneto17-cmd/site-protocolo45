@@ -120,6 +120,11 @@ export default function PricingSection() {
             Todos os planos usam o mesmo Motor P45. A diferença está no
             compromisso e no horizonte detalhado disponível.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-[var(--text-secondary)]">
+            Você assina o <span className="font-semibold text-white">planejamento</span>, não o conteúdo:
+            nenhum plano inclui videoaulas, apostilas ou banco de questões. As
+            missões apontam o que estudar no material que você já usa.
+          </p>
         </motion.div>
 
         {/* Pricing grid */}
@@ -241,7 +246,7 @@ export default function PricingSection() {
         </div>
 
         <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-[var(--text-muted)]">
-          Em todos os planos, o cronograma é vivo: conclusões, acertos, dificuldades
+          Em todos os planos, a rota é viva: conclusões, acertos, dificuldades
           e mudanças de disponibilidade recalculam a rota. A diferença está no
           horizonte detalhado que você pode visualizar.
         </p>

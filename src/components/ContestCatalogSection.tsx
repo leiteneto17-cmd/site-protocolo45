@@ -119,8 +119,10 @@ export default function ContestCatalogSection() {
             Veja se o Protocolo45 já está pronto para o seu concurso
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-            São 18 missões estruturadas com matérias, tópicos e pesos conforme a
-            fonte disponível. Escolha uma área ou busque pelo concurso.
+            São 18 editais já mapeados — matérias, tópicos e pesos conforme a
+            fonte disponível — para o Motor P45 montar sua rota sem você
+            digitar nada. É o mapa do edital, não o material de estudo.
+            Escolha uma área ou busque pelo concurso.
           </p>
         </div>
 

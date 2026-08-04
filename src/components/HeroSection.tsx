@@ -55,7 +55,7 @@ export default function HeroSection() {
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="glass-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-[var(--cyan-vivid)] border border-cyan-500/20">
                 <span className="w-2 h-2 rounded-full bg-[var(--cyan-vivid)] animate-pulse" />
-                Planejamento adaptativo para concursos
+                Sistema de decisão para concursos
               </span>
             </motion.div>
 
@@ -65,19 +65,33 @@ export default function HeroSection() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight mb-6"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              O método matemático{" "}
-              <span className="gradient-text">blindado contra o esquecimento.</span>
+              Você não precisa de mais material.{" "}
+              <span className="gradient-text">Precisa saber o que estudar hoje.</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0"
             >
               O <span className="text-white font-semibold">PROTOCOLO 45</span>{" "}
-              transforma seu concurso, seu tempo disponível e seus resultados
-              em missões diárias de teoria, questões e revisão. Quando sua
-              rotina muda, o plano recalcula a próxima rota.
+              transforma seu edital, seu tempo disponível e seus resultados em
+              missões diárias — o tópico, o método e a duração de cada uma.
+              Você executa no material que já usa. Quando sua rotina muda, o
+              Motor P45 recalcula a próxima rota.
+            </motion.p>
+
+            {/* Fronteira do produto — o que é e o que não é */}
+            <motion.p
+              variants={itemVariants}
+              className="mb-10 max-w-xl mx-auto lg:mx-0 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] px-4 py-3 text-sm leading-relaxed text-[var(--text-secondary)]"
+            >
+              <span className="font-semibold text-[var(--amber)]">
+                Não vendemos conteúdo. Vendemos a decisão.
+              </span>{" "}
+              Sem videoaulas, sem apostilas, sem banco de questões — o
+              Protocolo 45 é a estratégia que organiza o material que você já
+              tem (cursinho, PDFs, sua plataforma de questões).
             </motion.p>
 
             {/* CTAs */}
@@ -147,9 +161,9 @@ export default function HeroSection() {
 
                   {/* Study items */}
                   {[
-                    { subject: "Direito Constitucional", type: "Revisão FSRS", time: "45 min", score: 92, color: "cyan" },
-                    { subject: "Informática", type: "Teoria + Questões", time: "30 min", score: 78, color: "blue" },
-                    { subject: "Português", type: "Questões CESPE", time: "25 min", score: 65, color: "amber" },
+                    { subject: "Direito Constitucional", type: "Revisar · no seu resumo", time: "45 min", score: 92, color: "cyan" },
+                    { subject: "Informática", type: "Estudar teoria · no seu curso", time: "30 min", score: 78, color: "blue" },
+                    { subject: "Português", type: "Resolver questões · no seu banco", time: "25 min", score: 65, color: "amber" },
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -188,8 +202,8 @@ export default function HeroSection() {
                     </div>
                   </div>
                   <p className="text-[10px] leading-relaxed text-[var(--text-muted)]">
-                    Demonstração ilustrativa da rota. O conteúdo varia conforme
-                    o concurso, a disponibilidade e o histórico do aluno.
+                    Demonstração ilustrativa da rota. O Protocolo 45 indica o
+                    tópico, o método e o tempo — o material de estudo é o seu.
                   </p>
                 </div>
               </div>

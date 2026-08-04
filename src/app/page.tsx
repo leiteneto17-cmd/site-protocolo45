@@ -10,6 +10,7 @@ import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import FinalCtaSection from "@/components/FinalCtaSection";
 import ContestCatalogSection from "@/components/ContestCatalogSection";
+import ScopeSection from "@/components/ScopeSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <ScopeSection />
         <ContestCatalogSection />
         <ProductDemoSection />
         <PainSection />

@@ -9,7 +9,7 @@ const steps = [
   {
     icon: PlayCircle,
     title: "Estude a missão do dia",
-    text: "Execute teoria, questões e revisões dentro do tempo disponível, sem decidir sozinho a próxima prioridade.",
+    text: "Abra seu curso, seu PDF ou seu banco de questões e execute a missão dentro do tempo disponível, sem decidir sozinho a próxima prioridade.",
   },
   {
     icon: Route,
@@ -29,7 +29,7 @@ export default function HowItWorksSection() {
           </h2>
           <p className="mx-auto max-w-2xl text-[var(--text-secondary)]">
             Três passos para sair da decisão diária e entrar em uma rotina
-            orientada.
+            orientada — com o material de estudo que você já usa.
           </p>
         </div>
         <ol className="grid gap-5 md:grid-cols-3">

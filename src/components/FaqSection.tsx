@@ -11,6 +11,16 @@ import {
 
 const faqs = [
   {
+    question: "O Protocolo 45 inclui videoaulas, apostilas ou banco de questões?",
+    answer:
+      "Não. O Protocolo 45 não vende conteúdo — vende a decisão. Você não recebe aulas, PDFs, resumos nem questões: recebe a estratégia que diz qual tópico do edital estudar hoje, com qual método (teoria, questões ou revisão) e por quanto tempo. A execução acontece no material que você já usa: seu cursinho, seus livros, suas videoaulas e sua plataforma de questões.",
+  },
+  {
+    question: "Então preciso ter um cursinho ou material próprio?",
+    answer:
+      "Sim — você precisa de alguma fonte de conteúdo, e ela pode ser gratuita. Cursinho online, apostila, livro, videoaula do YouTube ou material do próprio órgão: o Protocolo 45 funciona com qualquer uma. O que ele resolve é o problema de decidir o que abrir hoje, quanto tempo dedicar e quando revisar — não o de onde tirar a matéria.",
+  },
+  {
     question: "Qual é a diferença entre o plano mensal e o anual?",
     answer:
       "No Mensal, você executa uma janela operacional móvel: os próximos 7 dias aparecem detalhados e a rota libera um novo dia diariamente, sempre recalculada pelos seus resultados. No Trimestral e no Anual, além da rota semanal, você visualiza a projeção estratégica completa até a prova. Todos os planos incluem o Motor P45, revisões FSRS e recálculo adaptativo; o que muda é o horizonte detalhado de visualização.",
@@ -28,12 +38,12 @@ const faqs = [
   {
     question: "E se eu perder dias de estudo?",
     answer:
-      "O Protocolo 45 foi projetado exatamente para isso. Diferente de planilhas que acumulam matéria e te fazem sentir que falhou, o nosso Core Engine recalcula o cronograma automaticamente quando detecta que você não estudou. Ele redistribui as prioridades, ajusta o Score de cada matéria e cria um novo plano a partir de onde você está — sem bola de neve, sem culpa. O cronograma funciona em ciclos adaptativos, não como um calendário fixo.",
+      "O Protocolo 45 foi projetado exatamente para isso. Diferente de planilhas que acumulam matéria e te fazem sentir que falhou, o Motor P45 recalcula a rota automaticamente quando detecta que você não estudou. Ele redistribui as prioridades, ajusta o Score de cada matéria e cria um novo plano de ataque a partir de onde você está — sem bola de neve, sem culpa. A rota funciona em ciclos adaptativos, não como um calendário fixo.",
   },
   {
     question: "Preciso de algum conhecimento técnico para usar?",
     answer:
-      "Absolutamente não. Toda a inteligência do sistema roda por baixo — você só vê o plano do dia, as revisões agendadas e seu progresso. A interface é limpa e intuitiva: abriu o app, viu o que estudar hoje, estudou, marcou como feito. O Protocolo 45 faz o trabalho pesado de organizar e priorizar para você.",
+      "Absolutamente não. Toda a inteligência do sistema roda por baixo — você só vê a missão do dia, as revisões agendadas e seu progresso. A interface é limpa e intuitiva: abriu o app, viu o que estudar hoje, estudou, marcou como feito. O Protocolo 45 faz o trabalho pesado de organizar e priorizar para você.",
   },
   {
     question: "Funciona para qualquer concurso?",

@@ -12,8 +12,12 @@ const demos = [
     icon: CalendarCheck2,
     label: "2. Execute o dia",
     title: "Missões claras",
-    text: "Veja o tópico, o método e o tempo previsto. Você não precisa montar a agenda toda manhã.",
-    visual: ["Teoria · 35 min", "Questões · 25 min", "Revisão · 20 min"],
+    text: "Veja o tópico, o método e o tempo previsto — e execute no seu material de sempre. Você não precisa montar a agenda toda manhã.",
+    visual: [
+      "Teoria · 35 min · seu curso",
+      "Questões · 25 min · seu banco",
+      "Revisão · 20 min · seu resumo",
+    ],
   },
   {
     icon: RefreshCw,
@@ -35,12 +39,13 @@ export default function ProductDemoSection() {
             O que você recebe
           </span>
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Do concurso à missão de hoje,{" "}
+            Do edital à missão de hoje,{" "}
             <span className="gradient-text">sem montar planilhas.</span>
           </h2>
           <p className="text-lg leading-relaxed text-[var(--text-secondary)]">
-            O Protocolo 45 organiza a preparação em uma sequência simples:
-            escolher, executar, registrar e recalcular.
+            Você recebe a estratégia — não o material. O Protocolo 45 organiza
+            a preparação em uma sequência simples: escolher, executar,
+            registrar e recalcular.
           </p>
         </div>
 
@@ -84,8 +89,9 @@ export default function ProductDemoSection() {
           ))}
         </div>
         <p className="mt-5 text-center text-xs text-[var(--text-muted)]">
-          Representação visual do fluxo do produto. Conteúdos e durações mudam
-          conforme cada preparação.
+          Representação visual do fluxo do produto. Tópicos e durações mudam
+          conforme cada preparação. O material de estudo não está incluso — as
+          missões apontam o que estudar na sua própria fonte.
         </p>
       </div>
     </section>

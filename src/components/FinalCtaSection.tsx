@@ -13,7 +13,8 @@ export default function FinalCtaSection() {
           </h2>
           <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-[var(--text-secondary)]">
             Escolha seu plano, configure sua preparação e deixe o Motor P45
-            organizar a próxima rota a partir da sua realidade.
+            organizar a próxima rota a partir da sua realidade — no material
+            de estudo que você já tem.
           </p>
           <a
             href={CHECKOUT_URL}
