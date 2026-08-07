@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Produto", href: "#produto" },
   { label: "Concursos", href: "#catalogo" },
   { label: "Como funciona", href: "#como-funciona" },
-  { label: "Sobre", href: "#jornada" },
   { label: "Planos", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];

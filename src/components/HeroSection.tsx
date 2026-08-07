@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Check } from "lucide-react";
 import { TRIAL_ENABLED, TRIAL_URL } from "@/lib/constants";
 
 const containerVariants = {
@@ -133,95 +133,67 @@ export default function HeroSection() {
               </button>
             </motion.div>
 
-
+            {/* Faixa de confiança — risk reversal logo abaixo do CTA */}
+            <motion.ul
+              variants={itemVariants}
+              className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-start"
+            >
+              {[
+                TRIAL_ENABLED ? "7 dias grátis, sem cartão" : "Garantia incondicional de 7 dias",
+                "Cancele quando quiser",
+                "Você usa o material que já tem",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="inline-flex items-center gap-1.5 text-sm text-[var(--text-secondary)]"
+                >
+                  <Check className="h-4 w-4 shrink-0 text-[var(--cyan-vivid)]" />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
-          {/* Right — App mockup */}
+          {/* Right — Print REAL do app (tela inicial), emoldurado como navegador */}
           <motion.div
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
             className="relative mx-auto w-full max-w-xl lg:block"
           >
-            {/* Glow behind mockup */}
+            {/* Glow atrás do print */}
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-royal)] via-[var(--cyan-vivid)] to-[var(--blue-mid)] opacity-20 blur-[80px] rounded-3xl" />
 
-            {/* Mockup card */}
+            {/* Moldura de navegador */}
             <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-cyan-500/10">
               <div className="rounded-xl bg-[var(--surface-1)] overflow-hidden">
-                {/* Title bar */}
+                {/* Barra do navegador com a URL real */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-500/70" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                     <div className="w-3 h-3 rounded-full bg-green-500/70" />
                   </div>
-                  <span className="text-xs text-[var(--text-muted)] ml-2">PROTOCOLO 45 — Dashboard</span>
+                  <div className="ml-2 flex-1 truncate rounded-md bg-white/5 px-3 py-1 text-center text-[11px] text-[var(--text-muted)]">
+                    app.protocolo45.com.br
+                  </div>
                 </div>
 
-                {/* Fake dashboard content */}
-                <div className="p-6 space-y-4">
-                  {/* Header */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs text-[var(--text-muted)]">Missão de hoje</p>
-                      <p className="text-sm font-semibold text-white">Seu plano para hoje</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-[var(--text-muted)]">Rota diária</p>
-                      <p className="text-sm font-bold text-[var(--amber)]">3 missões</p>
-                    </div>
-                  </div>
-
-                  {/* Study items */}
-                  {[
-                    { subject: "Direito Constitucional", type: "Revisar · no seu resumo", time: "45 min", score: 92, color: "cyan" },
-                    { subject: "Informática", type: "Estudar teoria · no seu curso", time: "30 min", score: 78, color: "blue" },
-                    { subject: "Português", type: "Resolver questões · no seu banco", time: "25 min", score: 65, color: "amber" },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-4 p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:border-white/10 transition-colors"
-                    >
-                      <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold ${
-                          item.color === "cyan"
-                            ? "bg-cyan-500/15 text-cyan-400"
-                            : item.color === "blue"
-                            ? "bg-blue-500/15 text-blue-400"
-                            : "bg-amber-500/15 text-amber-400"
-                        }`}
-                      >
-                        {item.score}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-white truncate">{item.subject}</p>
-                        <p className="text-xs text-[var(--text-muted)]">{item.type}</p>
-                      </div>
-                      <span className="text-xs text-[var(--text-muted)] whitespace-nowrap">{item.time}</span>
-                    </div>
-                  ))}
-
-                  {/* Progress bar */}
-                  <div className="pt-2">
-                    <div className="flex items-center justify-between text-xs mb-1.5">
-                      <span className="text-[var(--text-muted)]">Progresso do edital</span>
-                      <span className="text-[var(--cyan-vivid)] font-medium">34%</span>
-                    </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-[var(--blue-royal)] to-[var(--cyan-vivid)]"
-                        style={{ width: "34%" }}
-                      />
-                    </div>
-                  </div>
-                  <p className="text-[10px] leading-relaxed text-[var(--text-muted)]">
-                    Demonstração ilustrativa da rota. O Protocolo 45 indica o
-                    tópico, o método e o tempo — o material de estudo é o seu.
-                  </p>
-                </div>
+                {/* Screenshot real — arquivo em /public/screenshots/home.png */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/home.png"
+                  alt="Tela inicial do Protocolo 45: missão do dia, meta da semana e progresso do edital"
+                  width={1280}
+                  height={840}
+                  loading="eager"
+                  className="block w-full"
+                />
               </div>
             </div>
+            <p className="mt-3 text-center text-xs text-[var(--text-muted)]">
+              Tela real do app, hoje no ar.
+            </p>
           </motion.div>
         </div>
       </div>

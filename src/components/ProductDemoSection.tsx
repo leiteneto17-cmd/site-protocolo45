@@ -1,30 +1,19 @@
-import { CalendarCheck2, ListChecks, RefreshCw, ShieldCheck } from "lucide-react";
+import { ScanLine } from "lucide-react";
 
-const demos = [
+const shots = [
   {
-    icon: ListChecks,
-    label: "1. Escolha a missão",
-    title: "Concurso estruturado",
-    text: "Comece por uma missão do catálogo, com matérias e pesos preservados conforme a fonte disponível.",
-    visual: ["Segurança e Operações", "Fiscal e Controle", "Administrativo"],
+    src: "/screenshots/missao.png",
+    alt: "Missão do dia no Protocolo 45: tópico de Língua Portuguesa, método, tempo e a explicação de por que estudar isso agora",
+    title: "A missão de hoje — e por que é ela",
+    text:
+      "O app diz o tópico, o método e o tempo previsto, e explica o motivo daquela ser a próxima missão. Você executa no seu próprio material.",
   },
   {
-    icon: CalendarCheck2,
-    label: "2. Execute o dia",
-    title: "Missões claras",
-    text: "Veja o tópico, o método e o tempo previsto — e execute no seu material de sempre. Você não precisa montar a agenda toda manhã.",
-    visual: [
-      "Teoria · 35 min · seu curso",
-      "Questões · 25 min · seu banco",
-      "Revisão · 20 min · seu resumo",
-    ],
-  },
-  {
-    icon: RefreshCw,
-    label: "3. Registre e continue",
-    title: "Rota recalculada",
-    text: "Conclusões, resultados e mudanças de horário reorganizam as próximas missões.",
-    visual: ["Histórico preservado", "Revisões protegidas", "Próxima rota pronta"],
+    src: "/screenshots/plano.png",
+    alt: "Plano completo no Protocolo 45: calendário até a prova e cobertura por matéria",
+    title: "O plano inteiro, recalculado sozinho",
+    text:
+      "Calendário até a prova, cobertura por matéria e revisões protegidas. Mudou sua rotina? O Motor P45 reorganiza as próximas missões — sem você montar planilha.",
   },
 ];
 
@@ -35,63 +24,62 @@ export default function ProductDemoSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            O que você recebe
+            <ScanLine className="h-3.5 w-3.5" />
+            Telas reais do app
           </span>
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Do edital à missão de hoje,{" "}
-            <span className="gradient-text">sem montar planilhas.</span>
+            Não é mockup.{" "}
+            <span className="gradient-text">É o produto, no ar.</span>
           </h2>
           <p className="text-lg leading-relaxed text-[var(--text-secondary)]">
-            Você recebe a estratégia — não o material. O Protocolo 45 organiza
-            a preparação em uma sequência simples: escolher, executar,
-            registrar e recalcular.
+            Estas são capturas do Protocolo 45 rodando em{" "}
+            <span className="text-white">app.protocolo45.com.br</span>. O que
+            você vê aqui é exatamente o que recebe ao entrar.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {demos.map((demo) => (
-            <article
-              key={demo.title}
-              className="rounded-2xl border border-white/10 bg-[var(--surface-1)] p-5 shadow-xl shadow-black/20"
-            >
-              <div className="mb-5 flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-300">
-                  <demo.icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                  {demo.label}
-                </span>
-              </div>
-              <div className="mb-5 rounded-xl border border-white/10 bg-[#f8fafc] p-4 text-slate-950">
-                <div className="mb-3 flex items-center justify-between">
-                  <strong className="text-sm">{demo.title}</strong>
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                </div>
-                <div className="space-y-2">
-                  {demo.visual.map((item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-2 rounded-lg bg-slate-100 px-3 py-2 text-xs"
-                    >
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white">
-                        {index + 1}
-                      </span>
-                      {item}
+        <div className="grid gap-8 lg:grid-cols-2">
+          {shots.map((shot) => (
+            <figure key={shot.src} className="flex flex-col">
+              <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-cyan-500/10">
+                <div className="rounded-xl bg-[var(--surface-1)] overflow-hidden">
+                  <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/70" />
                     </div>
-                  ))}
+                    <div className="ml-2 flex-1 truncate rounded-md bg-white/5 px-3 py-1 text-center text-[11px] text-[var(--text-muted)]">
+                      app.protocolo45.com.br
+                    </div>
+                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1280}
+                    height={840}
+                    loading="lazy"
+                    className="block w-full"
+                  />
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
-                {demo.text}
-              </p>
-            </article>
+              <figcaption className="mt-5 px-1">
+                <strong className="block text-lg font-semibold text-white">
+                  {shot.title}
+                </strong>
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {shot.text}
+                </p>
+              </figcaption>
+            </figure>
           ))}
         </div>
-        <p className="mt-5 text-center text-xs text-[var(--text-muted)]">
-          Representação visual do fluxo do produto. Tópicos e durações mudam
-          conforme cada preparação. O material de estudo não está incluso — as
-          missões apontam o que estudar na sua própria fonte.
+
+        <p className="mt-8 text-center text-xs text-[var(--text-muted)]">
+          Os dados das telas são de uma preparação real de exemplo. Tópicos,
+          datas e durações mudam conforme cada edital. O material de estudo não
+          está incluso — as missões apontam o que estudar na sua própria fonte.
         </p>
       </div>
     </section>

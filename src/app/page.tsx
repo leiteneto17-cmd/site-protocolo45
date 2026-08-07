@@ -4,7 +4,6 @@ import PainSection from "@/components/PainSection";
 import ProductDemoSection from "@/components/ProductDemoSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PillarsSection from "@/components/PillarsSection";
-import JourneySection from "@/components/JourneySection";
 import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
@@ -25,7 +24,6 @@ export default function Home() {
         <PainSection />
         <PillarsSection />
         <HowItWorksSection />
-        <JourneySection />
         <TrialSection />
         <PricingSection />
         <FaqSection />
