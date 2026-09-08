@@ -51,12 +51,19 @@ const MISSIONS: Mission[] = [
   { name: "PM SP 2026 — Aluno-Soldado", role: "Aluno-Soldado PM", area: "seguranca", board: "VUNESP", subjects: 5, status: "official", date: "20/09/2026" },
   { name: "PC PR 2026", role: "Agente de Polícia Judiciária", area: "seguranca", board: "FGV", subjects: 13, status: "official", date: "11/10/2026" },
   { name: "PC AL 2026", role: "Agente e Escrivão", area: "seguranca", board: "CEBRASPE", subjects: 15, status: "official", date: "06/12/2026" },
+  { name: "PM AL 2026/2027", role: "Soldado Combatente", area: "seguranca", board: "CEBRASPE", subjects: 11, status: "official", date: "17/01/2027" },
+  { name: "CBM AL 2026/2027", role: "Soldado Bombeiro Militar", area: "seguranca", board: "CEBRASPE", subjects: 11, status: "official", date: "24/01/2027" },
+  { name: "PM PE", role: "Soldado da Polícia Militar", area: "seguranca", board: "Instituto AOCP", subjects: 6, status: "forecast" },
+  { name: "PC PE", role: "Agente de Polícia", area: "seguranca", board: "CEBRASPE", subjects: 10, status: "forecast" },
+  { name: "PC PE", role: "Escrivão de Polícia", area: "seguranca", board: "CEBRASPE", subjects: 10, status: "forecast" },
+  { name: "Polícia Penal PE", role: "Policial Penal", area: "seguranca", board: "A definir", subjects: 12, status: "forecast" },
   { name: "PRF", role: "Policial Rodoviário Federal", area: "seguranca", board: "CEBRASPE", subjects: 14, status: "forecast" },
   { name: "PMDF", role: "Soldado Policial Militar", area: "seguranca", board: "A definir", subjects: 6, status: "forecast" },
-  { name: "PC BA", role: "Investigador de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 13, status: "forecast" },
-  { name: "PC BA", role: "Escrivão de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 13, status: "forecast" },
+  { name: "PC BA 2026", role: "Investigador de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 13, status: "official", date: "06/12/2026" },
+  { name: "PC BA 2026", role: "Escrivão de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 13, status: "official", date: "06/12/2026" },
   { name: "Polícia Penal MS", role: "Policial Penal", area: "seguranca", board: "A definir", subjects: 3, status: "forecast" },
   { name: "INSS", role: "Técnico do Seguro Social", area: "administrativo", board: "A definir", subjects: 7, status: "forecast" },
+  { name: "IBGE", role: "Recenseador temporário", area: "administrativo", board: "A definir", subjects: 4, status: "forecast" },
   { name: "Banco do Brasil", role: "Escriturário — Agente Comercial", area: "administrativo", board: "A definir", subjects: 8, status: "forecast" },
   { name: "Receita Federal", role: "Auditor-Fiscal", area: "fiscal", board: "A definir", subjects: 17, status: "forecast" },
   { name: "Receita Federal", role: "Analista-Tributário", area: "fiscal", board: "A definir", subjects: 11, status: "forecast" },
@@ -65,6 +72,7 @@ const MISSIONS: Mission[] = [
   { name: "ANBIMA C-Pro R", role: "Relacionamento", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
   { name: "Banco do Brasil", role: "Escriturário — Agente de Tecnologia", area: "tecnologia", board: "A definir", subjects: 7, status: "forecast" },
   { name: "48º Exame de Ordem", role: "OAB — primeira fase", area: "juridico", board: "FGV", subjects: 20, status: "official", date: "10/01/2027" },
+  { name: "AGU", role: "Advogado da União", area: "juridico", board: "A definir", subjects: 14, status: "forecast" },
 ];
 
 const STATUS = {
@@ -119,7 +127,7 @@ export default function ContestCatalogSection() {
             Veja se o Protocolo45 já está pronto para o seu concurso
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-            São 18 editais já mapeados — matérias, tópicos e pesos conforme a
+            São {MISSIONS.length} missões já mapeadas — matérias, tópicos e pesos conforme a
             fonte disponível — para o Motor P45 montar sua rota sem você
             digitar nada. É o mapa do edital, não o material de estudo.
             Escolha uma área ou busque pelo concurso.
@@ -236,7 +244,7 @@ export default function ContestCatalogSection() {
           </div>
 
           <p className="mt-4 text-center text-xs text-[var(--text-muted)]">
-            Catálogo atualizado em 23 de julho de 2026. Em missões pré-edital,
+            Catálogo atualizado em 8 de setembro de 2026. Em missões pré-edital,
             o último conteúdo oficial serve como base e é revisado quando o novo
             edital é publicado.
           </p>
