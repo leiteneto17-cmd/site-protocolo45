@@ -2,18 +2,22 @@ import { ScanLine } from "lucide-react";
 
 const shots = [
   {
-    src: "/screenshots/missao.png",
+    src: "/screenshots/estudar-crop.png",
+    w: 2580,
+    h: 1010,
     alt: "Missão do dia no Protocolo 45: tópico de Língua Portuguesa, método, tempo e a explicação de por que estudar isso agora",
     title: "A missão de hoje — e por que é ela",
     text:
       "O app diz o tópico, o método e o tempo previsto, e explica o motivo daquela ser a próxima missão. Você executa no seu próprio material.",
   },
   {
-    src: "/screenshots/plano.png",
-    alt: "Plano completo no Protocolo 45: calendário até a prova e cobertura por matéria",
+    src: "/screenshots/plano-crop.png",
+    w: 2640,
+    h: 1560,
+    alt: "Plano completo no Protocolo 45: rota até a prova, calendário adaptativo e cobertura do edital",
     title: "O plano inteiro, recalculado sozinho",
     text:
-      "Calendário até a prova, cobertura por matéria e revisões protegidas. Mudou sua rotina? O Motor P45 reorganiza as próximas missões — sem você montar planilha.",
+      "Rota até a prova, calendário adaptativo e cobertura do edital. Mudou sua rotina? O Motor P45 reorganiza as próximas missões — sem você montar planilha.",
   },
 ];
 
@@ -23,7 +27,7 @@ export default function ProductDemoSection() {
       <div className="absolute inset-0 bg-[var(--surface-0)]" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">
             <ScanLine className="h-3.5 w-3.5" />
             Telas reais do app
           </span>
@@ -41,7 +45,7 @@ export default function ProductDemoSection() {
         <div className="grid gap-8 lg:grid-cols-2">
           {shots.map((shot) => (
             <figure key={shot.src} className="flex flex-col">
-              <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-cyan-500/10">
+              <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-violet-500/10">
                 <div className="rounded-xl bg-[var(--surface-1)] overflow-hidden">
                   <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
                     <div className="flex gap-1.5">
@@ -57,10 +61,10 @@ export default function ProductDemoSection() {
                   <img
                     src={shot.src}
                     alt={shot.alt}
-                    width={1280}
-                    height={840}
+                    width={shot.w}
+                    height={shot.h}
                     loading="lazy"
-                    className="block w-full"
+                    className="block w-full bg-white"
                   />
                 </div>
               </div>

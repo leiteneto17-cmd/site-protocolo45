@@ -22,7 +22,7 @@ export default function ScopeSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[var(--text-secondary)]">
-            <Compass className="h-3.5 w-3.5 text-cyan-300" />
+            <Compass className="h-3.5 w-3.5 text-violet-300" />
             Antes de assinar, entenda o que você leva
           </span>
           <h2
@@ -71,9 +71,9 @@ export default function ScopeSection() {
           </div>
 
           {/* O que É */}
-          <div className="rounded-2xl border border-cyan-500/10 bg-gradient-to-br from-cyan-500/[0.06] to-transparent p-6 lg:p-8">
+          <div className="rounded-2xl border border-violet-500/10 bg-gradient-to-br from-violet-500/[0.06] to-transparent p-6 lg:p-8">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/15">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/15">
                 <Compass className="h-5 w-5 text-[var(--cyan-vivid)]" />
               </div>
               <div>
@@ -89,7 +89,7 @@ export default function ScopeSection() {
               {is.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 rounded-lg border border-cyan-500/[0.06] bg-cyan-500/[0.04] p-3"
+                  className="flex items-start gap-3 rounded-lg border border-violet-500/[0.06] bg-violet-500/[0.04] p-3"
                 >
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400/70" />
                   <p className="text-sm leading-relaxed text-[var(--text-secondary)]">

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import {
   BookOpen,
   CalendarDays,
+  ChevronDown,
   Cpu,
   GraduationCap,
   Grid2X2,
@@ -101,11 +102,11 @@ const MISSIONS: Mission[] = [
 const STATUS = {
   official: {
     label: "Data oficial",
-    className: "border-cyan-400/20 bg-cyan-400/10 text-cyan-200",
+    className: "border-violet-400/20 bg-violet-400/10 text-violet-200",
   },
   forecast: {
     label: "Pré-edital",
-    className: "border-blue-400/20 bg-blue-400/10 text-blue-200",
+    className: "border-violet-400/20 bg-violet-400/10 text-violet-200",
   },
   scheduled: {
     label: "Você agenda",
@@ -116,9 +117,42 @@ const STATUS = {
   { label: string; className: string }
 >;
 
+/** Quantos cartões aparecem antes de o visitante pedir a lista inteira.
+ *  A lista completa no celular tinha 12 telas de rolagem e empurrava o
+ *  produto e o preço para baixo — quem chega pelo telefone desistia antes.
+ *  O número total continua dito em texto; o que muda é quanto rola. */
+const PREVIEW_COUNT = 9;
+
+/** A prévia é um round-robin por área, não os nove primeiros da lista: a
+ *  ordem crua começa com dez missões de segurança seguidas e faz o catálogo
+ *  parecer só policial. Assim o visitante vê de cara que há educação, fiscal,
+ *  jurídico e ENEM — e as datas oficiais, que são as mais concretas, entram
+ *  antes das pré-edital. */
+function preview(list: Mission[]): Mission[] {
+  const byArea = new Map<string, Mission[]>();
+  for (const mission of [...list].sort((a, b) =>
+    a.status === b.status ? 0 : a.status === "official" ? -1 : 1,
+  )) {
+    const bucket = byArea.get(mission.area) ?? [];
+    bucket.push(mission);
+    byArea.set(mission.area, bucket);
+  }
+  const queues = [...byArea.values()];
+  const out: Mission[] = [];
+  while (out.length < PREVIEW_COUNT && queues.some((q) => q.length)) {
+    for (const queue of queues) {
+      const next = queue.shift();
+      if (next) out.push(next);
+      if (out.length === PREVIEW_COUNT) break;
+    }
+  }
+  return out;
+}
+
 export default function ContestCatalogSection() {
   const [area, setArea] = useState<Area>("all");
   const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   const missions = useMemo(() => {
     const needle = query
@@ -139,11 +173,15 @@ export default function ContestCatalogSection() {
     );
   }, [area, query]);
 
+  const filtering = area !== "all" || query.trim() !== "";
+  const visible = showAll || filtering ? missions : preview(missions);
+  const hidden = missions.length - visible.length;
+
   return (
     <section id="catalogo" className="section-glow bg-[var(--surface-1)] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
+          <span className="inline-flex rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-violet-200">
             Catálogo atual
           </span>
           <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -169,7 +207,7 @@ export default function ContestCatalogSection() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Busque por concurso, cargo ou banca"
-              className="w-full rounded-2xl border border-white/10 bg-[var(--surface-0)] py-4 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-[var(--text-muted)] focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/10"
+              className="w-full rounded-2xl border border-white/10 bg-[var(--surface-0)] py-4 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-[var(--text-muted)] focus:border-violet-400/50 focus:ring-2 focus:ring-violet-400/10"
             />
           </label>
 
@@ -189,7 +227,7 @@ export default function ContestCatalogSection() {
                   onClick={() => setArea(item.id)}
                   className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
                     selected
-                      ? "border-cyan-400/40 bg-cyan-400/15 text-cyan-100"
+                      ? "border-violet-400/40 bg-violet-400/15 text-violet-100"
                       : "border-white/10 bg-white/[0.03] text-[var(--text-secondary)] hover:border-white/20 hover:text-white"
                   }`}
                 >
@@ -201,12 +239,12 @@ export default function ContestCatalogSection() {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {missions.map((mission) => {
+            {visible.map((mission) => {
               const status = STATUS[mission.status];
               return (
                 <article
                   key={`${mission.name}-${mission.role}`}
-                  className="glass-subtle flex min-h-48 flex-col rounded-2xl p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/20"
+                  className="glass-subtle flex min-h-48 flex-col rounded-2xl p-5 transition hover:-translate-y-0.5 hover:border-violet-400/20"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold ${status.className}`}>
@@ -225,7 +263,7 @@ export default function ContestCatalogSection() {
                   <div className="mt-auto flex items-center justify-between gap-3 pt-5 text-xs text-[var(--text-muted)]">
                     <span>{mission.board}</span>
                     {mission.date && (
-                      <span className="flex items-center gap-1.5 text-cyan-200">
+                      <span className="flex items-center gap-1.5 text-violet-200">
                         <CalendarDays aria-hidden="true" size={14} />
                         {mission.date}
                       </span>
@@ -235,6 +273,19 @@ export default function ContestCatalogSection() {
               );
             })}
           </div>
+
+          {hidden > 0 && (
+            <div className="mt-6 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:border-violet-400/40 hover:bg-violet-400/10"
+              >
+                Ver as outras {hidden} missões
+                <ChevronDown aria-hidden="true" size={16} />
+              </button>
+            </div>
+          )}
 
           {missions.length === 0 && (
             <div className="mt-6 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-10 text-center">
@@ -260,7 +311,7 @@ export default function ContestCatalogSection() {
             </div>
             <a
               href={LOGIN_URL}
-              className="shrink-0 rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/50 hover:bg-cyan-400/15"
+              className="shrink-0 rounded-xl border border-violet-400/30 bg-violet-400/10 px-5 py-3 text-sm font-semibold text-violet-100 transition hover:border-violet-300/50 hover:bg-violet-400/15"
             >
               Montar minha missão
             </a>

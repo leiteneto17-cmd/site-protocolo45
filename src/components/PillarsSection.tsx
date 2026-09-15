@@ -38,39 +38,39 @@ const getColorClasses = (color: string) => {
   switch (color) {
     case "cyan":
       return {
-        iconBg: "bg-cyan-500/15",
-        iconText: "text-cyan-400",
-        border: "border-cyan-500/20 hover:border-cyan-500/40",
-        glow: "group-hover:shadow-cyan-500/10",
-        highlight: "text-cyan-400",
-        badgeBg: "bg-cyan-500/10",
+        iconBg: "bg-violet-500/15",
+        iconText: "text-violet-400",
+        border: "border-violet-500/20 hover:border-violet-500/40",
+        glow: "group-hover:shadow-violet-500/10",
+        highlight: "text-violet-400",
+        badgeBg: "bg-violet-500/10",
       };
     case "blue":
       return {
-        iconBg: "bg-blue-500/15",
-        iconText: "text-blue-400",
-        border: "border-blue-500/20 hover:border-blue-500/40",
-        glow: "group-hover:shadow-blue-500/10",
-        highlight: "text-blue-400",
-        badgeBg: "bg-blue-500/10",
+        iconBg: "bg-violet-500/15",
+        iconText: "text-violet-400",
+        border: "border-violet-500/20 hover:border-violet-500/40",
+        glow: "group-hover:shadow-violet-500/10",
+        highlight: "text-violet-400",
+        badgeBg: "bg-violet-500/10",
       };
     case "amber":
       return {
-        iconBg: "bg-amber-500/15",
-        iconText: "text-amber-400",
-        border: "border-amber-500/20 hover:border-amber-500/40",
-        glow: "group-hover:shadow-amber-500/10",
-        highlight: "text-amber-400",
-        badgeBg: "bg-amber-500/10",
+        iconBg: "bg-purple-500/15",
+        iconText: "text-purple-400",
+        border: "border-purple-500/20 hover:border-purple-500/40",
+        glow: "group-hover:shadow-purple-500/10",
+        highlight: "text-purple-400",
+        badgeBg: "bg-purple-500/10",
       };
     default:
       return {
-        iconBg: "bg-cyan-500/15",
-        iconText: "text-cyan-400",
-        border: "border-cyan-500/20",
+        iconBg: "bg-violet-500/15",
+        iconText: "text-violet-400",
+        border: "border-violet-500/20",
         glow: "",
-        highlight: "text-cyan-400",
-        badgeBg: "bg-cyan-500/10",
+        highlight: "text-violet-400",
+        badgeBg: "bg-violet-500/10",
       };
   }
 };

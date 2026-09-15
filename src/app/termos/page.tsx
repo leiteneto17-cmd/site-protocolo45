@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <main className="mx-auto min-h-screen max-w-3xl px-4 py-16 sm:px-6">
-      <Link href="/" className="text-sm font-semibold text-cyan-300">
+      <Link href="/" className="text-sm font-semibold text-violet-300">
         ← Voltar ao Protocolo 45
       </Link>
       <h1 className="mb-6 mt-10 text-4xl font-bold">Termos de Uso</h1>

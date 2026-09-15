@@ -1,5 +1,3 @@
-import { Compass } from "lucide-react";
-
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 bg-[var(--surface-1)]">
@@ -7,9 +5,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--cyan-vivid)] to-[var(--blue-royal)] flex items-center justify-center">
-              <Compass className="w-4 h-4 text-white" />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/icon-p45.png"
+              alt="Protocolo 45"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-lg ring-1 ring-white/10"
+            />
             <span
               className="text-sm font-bold"
               style={{ fontFamily: "var(--font-outfit)" }}

@@ -53,7 +53,7 @@ export default function HeroSection() {
           >
             {/* Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
-              <span className="glass-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-[var(--cyan-vivid)] border border-cyan-500/20">
+              <span className="glass-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-[var(--cyan-vivid)] border border-violet-500/20">
                 <span className="w-2 h-2 rounded-full bg-[var(--cyan-vivid)] animate-pulse" />
                 Sistema de decisão para concursos
               </span>
@@ -81,18 +81,7 @@ export default function HeroSection() {
               Motor P45 recalcula a próxima rota.
             </motion.p>
 
-            {/* Fronteira do produto — o que é e o que não é */}
-            <motion.p
-              variants={itemVariants}
-              className="mb-10 max-w-xl mx-auto lg:mx-0 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] px-4 py-3 text-sm leading-relaxed text-[var(--text-secondary)]"
-            >
-              <span className="font-semibold text-[var(--amber)]">
-                Não vendemos conteúdo. Vendemos a decisão.
-              </span>{" "}
-              Sem videoaulas, sem apostilas, sem banco de questões — o
-              Protocolo 45 é a estratégia que organiza o material que você já
-              tem (cursinho, PDFs, sua plataforma de questões).
-            </motion.p>
+            <div className="mb-10" />
 
             {/* CTAs */}
             <motion.div
@@ -165,7 +154,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--blue-royal)] via-[var(--cyan-vivid)] to-[var(--blue-mid)] opacity-20 blur-[80px] rounded-3xl" />
 
             {/* Moldura de navegador */}
-            <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-cyan-500/10">
+            <div className="relative glass rounded-2xl p-1 shadow-2xl shadow-violet-500/10">
               <div className="rounded-xl bg-[var(--surface-1)] overflow-hidden">
                 {/* Barra do navegador com a URL real */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
@@ -179,15 +168,15 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* Screenshot real — arquivo em /public/screenshots/home.png */}
+                {/* Screenshot REAL do app (roxo, hoje no ar) — a missão do dia */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/screenshots/home.png"
-                  alt="Tela inicial do Protocolo 45: missão do dia, meta da semana e progresso do edital"
-                  width={1280}
-                  height={840}
+                  src="/screenshots/estudar-crop.png"
+                  alt="Missão do dia no Protocolo 45: o tópico, o método e o tempo, com o motivo de ser essa a próxima atividade"
+                  width={1290}
+                  height={505}
                   loading="eager"
-                  className="block w-full"
+                  className="block w-full bg-white"
                 />
               </div>
             </div>

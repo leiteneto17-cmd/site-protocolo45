@@ -19,8 +19,10 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ScopeSection />
-        <ContestCatalogSection />
+        {/* O produto vem antes do catálogo: a lista de missões é longa e,
+            no celular, empurrava a prova do produto para baixo. */}
         <ProductDemoSection />
+        <ContestCatalogSection />
         <PainSection />
         <PillarsSection />
         <HowItWorksSection />

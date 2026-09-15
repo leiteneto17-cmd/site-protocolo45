@@ -106,7 +106,7 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 lg:mb-24"
         >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-[var(--amber)] border border-amber-500/25 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-[var(--amber)] border border-purple-500/25 mb-4">
             Planos transparentes
           </span>
           <h2
@@ -138,14 +138,14 @@ export default function PricingSection() {
                 transition={{ duration: 0.6, delay: 0.15 + i * 0.1 }}
                 className={`relative flex flex-col justify-between rounded-2xl transition-all duration-300 ${
                   plan.highlight
-                    ? "md:-translate-y-4 md:scale-105 z-10 shadow-2xl shadow-amber-500/10 gradient-border gradient-border-amber"
+                    ? "md:-translate-y-4 md:scale-105 z-10 shadow-2xl shadow-purple-500/10 gradient-border gradient-border-amber"
                     : "glass border-white/5 hover:border-white/10"
                 }`}
               >
                 {/* Visual Highlight Badge */}
                 {plan.highlight && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full text-xs font-extrabold bg-[var(--amber)] text-[#0F172A] tracking-wider uppercase shadow-lg shadow-amber-500/30">
+                    <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full text-xs font-extrabold bg-[var(--amber)] text-white tracking-wider uppercase shadow-lg shadow-purple-500/30">
                       <Zap className="w-3.5 h-3.5 fill-current" />
                       {plan.badge}
                     </span>
@@ -175,11 +175,11 @@ export default function PricingSection() {
 
                     <div className={`mb-6 rounded-xl border p-3 ${
                       plan.highlight
-                        ? "border-amber-400/25 bg-amber-400/[0.06]"
-                        : "border-cyan-400/20 bg-cyan-400/[0.05]"
+                        ? "border-purple-400/25 bg-purple-400/[0.06]"
+                        : "border-violet-400/20 bg-violet-400/[0.05]"
                     }`}>
                       <div className={`text-xs font-bold ${
-                        plan.highlight ? "text-[var(--amber)]" : "text-cyan-300"
+                        plan.highlight ? "text-[var(--amber)]" : "text-violet-300"
                       }`}>
                         {plan.visibility}
                       </div>
@@ -217,7 +217,7 @@ export default function PricingSection() {
                       {plan.details.map((detail, idx) => (
                         <div key={idx} className="flex items-start gap-2.5">
                           <Check className={`w-4 h-4 mt-0.5 shrink-0 ${
-                            plan.highlight ? "text-[var(--amber)]" : "text-cyan-400"
+                            plan.highlight ? "text-[var(--amber)]" : "text-violet-400"
                           }`} />
                           <span className="text-xs text-[var(--text-secondary)] leading-relaxed">
                             {detail}

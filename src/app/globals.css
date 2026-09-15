@@ -2,7 +2,11 @@
 
 /* ============================================================
    PROTOCOLO 45 — Design System
-   Dark mode premium: azul profundo + cyan + amber CTAs
+   Dark premium ancorado na marca ROXA (#6e32b3), igual ao app.
+   Os nomes antigos (--blue-*, --cyan-*, --amber-*) foram mantidos
+   como ALIAS do roxo: assim todo componente que já referencia essas
+   variáveis vira roxo sem edição. Só as classes Tailwind com cor
+   fixa (cyan-400, amber-500…) precisam de varredura manual.
    ============================================================ */
 
 /* ---------- Base palette ---------- */
@@ -10,32 +14,39 @@
   --font-inter: "Inter", "Segoe UI", Arial, sans-serif;
   --font-outfit: "Outfit", "Aptos Display", "Segoe UI", Arial, sans-serif;
 
-  --background: #030712;
-  --foreground: #f1f5f9;
+  --background: #0c0713;
+  --foreground: #f4f1f9;
 
-  /* Brand blues */
-  --blue-deep: #0A1628;
-  --blue-royal: #1E40AF;
-  --blue-mid: #2563EB;
-  --cyan-vivid: #06B6D4;
-  --cyan-light: #67E8F9;
+  /* Marca roxa Protocolo 45 */
+  --brand: #6e32b3;        /* roxo canônico (= --accent do app) */
+  --brand-strong: #5b2795; /* roxo escuro (hover) */
+  --brand-bright: #8b46d6; /* roxo vivo (destaques) */
+  --brand-vivid: #a855f7;  /* violeta vivo (gradiente/realce) */
+  --brand-light: #d8b4fe;  /* lilás claro (fim do gradiente) */
+  --brand-glow: rgba(139, 70, 214, 0.45);
+  --brand-glow-strong: rgba(139, 70, 214, 0.22);
 
-  /* Amber (CTA exclusive) */
-  --amber: #F59E0B;
-  --amber-hover: #D97706;
-  --amber-glow: rgba(245, 158, 11, 0.45);
-  --amber-glow-strong: rgba(245, 158, 11, 0.25);
+  /* Alias dos nomes antigos → roxo (não remover: muitos componentes usam) */
+  --blue-deep: #17092b;
+  --blue-royal: var(--brand);
+  --blue-mid: var(--brand-bright);
+  --cyan-vivid: var(--brand-vivid);
+  --cyan-light: var(--brand-light);
+  --amber: var(--brand-bright);
+  --amber-hover: var(--brand);
+  --amber-glow: var(--brand-glow);
+  --amber-glow-strong: var(--brand-glow-strong);
 
-  /* Surfaces */
-  --surface-0: #030712;
-  --surface-1: #0F172A;
-  --surface-2: #1E293B;
-  --surface-3: #334155;
+  /* Surfaces — quase-preto com leve tom roxo */
+  --surface-0: #0c0713;
+  --surface-1: #160d24;
+  --surface-2: #211634;
+  --surface-3: #322247;
 
   /* Text */
   --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #7C8DA5;
+  --text-secondary: #a99fb8;
+  --text-muted: #837690;
 
   /* Semantic */
   --success: #10B981;
@@ -44,8 +55,8 @@
   --success-muted: rgba(16, 185, 129, 0.15);
 
   /* Glassmorphism */
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(148, 163, 184, 0.12);
+  --glass-bg: rgba(22, 13, 36, 0.6);
+  --glass-border: rgba(168, 148, 197, 0.14);
   --glass-highlight: rgba(255, 255, 255, 0.05);
 }
 
@@ -73,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Selection ---------- */
 ::selection {
-  background: rgba(6, 182, 212, 0.3);
+  background: rgba(139, 70, 214, 0.35);
   color: #fff;
 }
 
@@ -111,25 +122,25 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(16px);
 }
 
-/* Gradient text */
+/* Gradient text — família roxa */
 .gradient-text {
-  background: linear-gradient(135deg, #60A5FA 0%, var(--cyan-vivid) 50%, var(--cyan-light) 100%);
+  background: linear-gradient(135deg, var(--brand-vivid) 0%, var(--brand-bright) 50%, var(--brand-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-amber {
-  background: linear-gradient(135deg, var(--amber) 0%, #FBBF24 100%);
+  background: linear-gradient(135deg, var(--brand-bright) 0%, var(--brand-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Amber CTA glow — the money button */
+/* CTA roxo — o botão que vende, igual ao primário do app */
 .btn-cta {
-  background: linear-gradient(135deg, var(--amber) 0%, var(--amber-hover) 100%);
-  color: #0F172A;
+  background: linear-gradient(135deg, var(--brand-bright) 0%, var(--brand) 100%);
+  color: #ffffff;
   font-weight: 700;
   box-shadow:
     0 0 20px var(--amber-glow),
@@ -170,9 +181,9 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(
     -45deg,
     var(--surface-0),
-    #0c1e3d,
-    #0e2a4e,
-    #061e3f,
+    #1a0d2e,
+    #241041,
+    #17092b,
     var(--surface-0)
   );
   background-size: 400% 400%;
@@ -208,9 +219,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   50% {
     box-shadow:
-      0 0 30px var(--amber-glow),
-      0 0 80px rgba(245, 158, 11, 0.35),
-      0 0 120px rgba(245, 158, 11, 0.15);
+      0 0 30px var(--brand-glow),
+      0 0 80px rgba(139, 70, 214, 0.35),
+      0 0 120px rgba(139, 70, 214, 0.15);
   }
 }
 

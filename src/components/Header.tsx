@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Compass, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LOGIN_URL } from "@/lib/constants";
 
@@ -45,10 +45,15 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-[var(--cyan-vivid)] to-[var(--blue-royal)] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
-              <Compass className="w-5 h-5 text-white" />
-            </div>
+          <a href="#" className="flex items-center gap-2.5 group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/icon-p45.png"
+              alt="Protocolo 45"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-lg shadow-lg shadow-violet-500/20 ring-1 ring-white/10 transition-shadow group-hover:shadow-violet-500/40"
+            />
             <span className="text-lg font-bold tracking-tight" style={{ fontFamily: "var(--font-outfit)" }}>
               <span className="gradient-text">PROTOCOLO</span>{" "}
               <span className="text-white">45</span>

@@ -136,10 +136,10 @@ export default function PainSection() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="rounded-2xl p-6 lg:p-8 bg-gradient-to-br from-cyan-500/[0.06] to-transparent border border-cyan-500/10"
+            className="rounded-2xl p-6 lg:p-8 bg-gradient-to-br from-violet-500/[0.06] to-transparent border border-violet-500/10"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-cyan-500/15 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-violet-500/15 flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-[var(--cyan-vivid)]" />
               </div>
               <div>
@@ -160,7 +160,7 @@ export default function PainSection() {
                   variants={cardVariants}
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-cyan-500/[0.04] border border-cyan-500/[0.06]"
+                  className="flex items-start gap-3 p-3 rounded-lg bg-violet-500/[0.04] border border-violet-500/[0.06]"
                 >
                   <item.icon className="w-5 h-5 text-emerald-400/70 mt-0.5 shrink-0" />
                   <p className="text-sm text-[var(--text-secondary)] leading-relaxed">

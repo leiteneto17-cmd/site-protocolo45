@@ -17,10 +17,10 @@ export default function OpenGraphImage() {
           padding: "80px",
           color: "#f8fafc",
           background:
-            "linear-gradient(135deg, #030712 0%, #0A1628 55%, #12325a 100%)",
+            "linear-gradient(135deg, #0c0713 0%, #241041 55%, #6e32b3 130%)",
         }}
       >
-        <div style={{ display: "flex", color: "#67e8f9", fontSize: 30, fontWeight: 700 }}>
+        <div style={{ display: "flex", color: "#d8b4fe", fontSize: 30, fontWeight: 700 }}>
           PROTOCOLO 45
         </div>
         <div
@@ -33,7 +33,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.08,
           }}
         >
-          O método matemático blindado contra o esquecimento.
+          O que estudar hoje, calculado todo dia.
         </div>
         <div style={{ display: "flex", marginTop: 36, color: "#cbd5e1", fontSize: 28 }}>
           Missões diárias de teoria, questões e revisão para concursos.

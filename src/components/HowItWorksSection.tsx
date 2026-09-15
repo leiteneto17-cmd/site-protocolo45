@@ -36,7 +36,7 @@ export default function HowItWorksSection() {
           {steps.map((step, index) => (
             <li key={step.title} className="glass rounded-2xl p-6">
               <div className="mb-5 flex items-center justify-between">
-                <step.icon className="h-7 w-7 text-cyan-300" aria-hidden="true" />
+                <step.icon className="h-7 w-7 text-violet-300" aria-hidden="true" />
                 <span className="text-3xl font-extrabold text-white/10">
                   0{index + 1}
                 </span>

@@ -71,7 +71,7 @@ export default function TrialSection() {
           className="gradient-border rounded-3xl bg-[var(--surface-1)] p-7 text-center sm:p-12"
         >
           {showCount && (
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-xs font-bold text-[var(--amber)]">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-4 py-1.5 text-xs font-bold text-[var(--amber)]">
               <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--amber)]" />
               Restam {seats} vagas nesta turma
             </span>
@@ -114,7 +114,7 @@ export default function TrialSection() {
                   className="flex items-center justify-center gap-2 text-sm text-[var(--text-secondary)]"
                 >
                   <perk.icon
-                    className="h-4 w-4 shrink-0 text-cyan-300"
+                    className="h-4 w-4 shrink-0 text-violet-300"
                     aria-hidden="true"
                   />
                   {perk.text}
