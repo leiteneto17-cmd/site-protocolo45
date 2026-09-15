@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from "react";
 import {
+  BookOpen,
   CalendarDays,
   Cpu,
+  GraduationCap,
   Grid2X2,
   Landmark,
   Scale,
@@ -18,6 +20,8 @@ type Area =
   | "seguranca"
   | "administrativo"
   | "fiscal"
+  | "educacao"
+  | "enem"
   | "tecnologia"
   | "juridico";
 
@@ -42,13 +46,13 @@ const AREAS: {
   { id: "seguranca", label: "Segurança", icon: Shield },
   { id: "administrativo", label: "Administrativo", icon: Landmark },
   { id: "fiscal", label: "Fiscal e finanças", icon: Landmark },
+  { id: "educacao", label: "Educação", icon: BookOpen },
+  { id: "enem", label: "ENEM", icon: GraduationCap },
   { id: "tecnologia", label: "Tecnologia", icon: Cpu },
   { id: "juridico", label: "Jurídico", icon: Scale },
 ];
 
 const MISSIONS: Mission[] = [
-  { name: "PM SP 2026 — Cadete", role: "Cadete PM", area: "seguranca", board: "VUNESP", subjects: 12, status: "official", date: "16/08/2026" },
-  { name: "PM SP 2026 — Aluno-Soldado", role: "Aluno-Soldado PM", area: "seguranca", board: "VUNESP", subjects: 5, status: "official", date: "20/09/2026" },
   { name: "PC PR 2026", role: "Agente de Polícia Judiciária", area: "seguranca", board: "FGV", subjects: 13, status: "official", date: "11/10/2026" },
   { name: "PC AL 2026", role: "Agente e Escrivão", area: "seguranca", board: "CEBRASPE", subjects: 15, status: "official", date: "06/12/2026" },
   { name: "PM AL 2026/2027", role: "Soldado Combatente", area: "seguranca", board: "CEBRASPE", subjects: 11, status: "official", date: "17/01/2027" },
@@ -72,8 +76,26 @@ const MISSIONS: Mission[] = [
   { name: "ANBIMA C-Pro I", role: "Investimentos", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
   { name: "ANBIMA C-Pro R", role: "Relacionamento", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
   { name: "Banco do Brasil", role: "Escriturário — Agente de Tecnologia", area: "tecnologia", board: "A definir", subjects: 7, status: "forecast" },
+  { name: "ENEM 2026", role: "Exame Nacional do Ensino Médio", area: "enem", board: "INEP", subjects: 4, status: "official", date: "15/11/2026" },
+  { name: "SEDUC CE 2026", role: "Professor Nível C — Língua Portuguesa", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
+  { name: "SEDUC CE 2026", role: "Professor Nível C — Matemática", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
+  { name: "SEDUC CE 2026", role: "Professor Nível C — Educação Física", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
+  { name: "SED MS", role: "Professor — Língua Portuguesa", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Matemática", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — História", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Geografia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Biologia / Ciências", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Física", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Química", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Filosofia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Sociologia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Arte", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Educação Física", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
+  { name: "SED MS", role: "Professor — Língua Inglesa", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
   { name: "48º Exame de Ordem", role: "OAB — primeira fase", area: "juridico", board: "FGV", subjects: 20, status: "official", date: "10/01/2027" },
   { name: "AGU", role: "Advogado da União", area: "juridico", board: "A definir", subjects: 14, status: "forecast" },
+  { name: "TRF3", role: "Analista Judiciário — Área Judiciária", area: "juridico", board: "A definir", subjects: 11, status: "forecast" },
+  { name: "TRF3", role: "Técnico Judiciário — Área Administrativa", area: "juridico", board: "A definir", subjects: 9, status: "forecast" },
 ];
 
 const STATUS = {
