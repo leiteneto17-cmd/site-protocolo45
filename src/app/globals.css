@@ -82,6 +82,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-outfit, "Outfit", var(--font-sans), sans-serif);
 }
 
+/* Página de venda curta: texto e CTA visíveis no HTML inicial. */
+.sales-page { color-scheme: light; font-family: "Inter", "Segoe UI", Arial, sans-serif; }
+.sales-card { border: 1px solid #e7e1d9; background: #fffdfa; }
+.sales-cta { background: #5c4185; color: #fff; box-shadow: 0 4px 10px rgb(92 65 133 / 0.12); transition: background-color 150ms ease; }
+.sales-cta:hover { background: #4c3471; }
+.sales-page :where(a, button, input, summary):focus-visible { outline: 2px solid #5c4185; outline-offset: 4px; }
+.sales-page :where(p, h1, h2, h3) { overflow-wrap: break-word; }
+
 /* ---------- Selection ---------- */
 ::selection {
   background: rgba(139, 70, 214, 0.35);

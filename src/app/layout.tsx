@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://protocolo45.com.br"),
 
   title: {
-    default: "PROTOCOLO 45 — O que estudar hoje, calculado todo dia",
+    default: "Protocolo 45 — Saiba o que estudar hoje | 7 dias grátis",
     template: "%s | Protocolo 45",
   },
 
   description:
-    "O Protocolo 45 não vende conteúdo: vende a decisão. Ele diz qual tópico do edital estudar hoje, com qual método e por quanto tempo — no material que você já tem — e recalcula a rota conforme seus resultados.",
+    "Seu plano de estudos para concursos com missões diárias, revisões e ajustes à sua rotina. Saiba o tópico, o método e o tempo de cada estudo. Teste 7 dias grátis, sem cartão.",
 
   keywords: [
     "concurso público",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "PROTOCOLO 45 — Não estude mais. Estude a próxima missão certa.",
+    title: "Protocolo 45 — Saiba exatamente o que estudar hoje",
     description:
-      "O sistema de decisão da sua preparação: qual tópico estudar hoje, com qual método e por quanto tempo — no material que você já tem.",
+      "Missões diárias, revisões e uma rota que acompanha sua rotina. Teste 7 dias grátis, sem cartão.",
     type: "website",
     locale: "pt_BR",
     url: "/",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "PROTOCOLO 45 — Não estude mais. Estude a próxima missão certa.",
+    title: "Protocolo 45 — Saiba exatamente o que estudar hoje",
     description:
-      "A estratégia diária da sua preparação: o que estudar, quando revisar e por quanto tempo — no material que você já tem.",
+      "Seu edital e seu tempo viram missões claras. Teste 7 dias grátis, sem cartão.",
     images: ["/opengraph-image"],
   },
 };

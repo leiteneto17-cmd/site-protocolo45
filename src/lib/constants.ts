@@ -34,17 +34,15 @@ export const LOGIN_URL = "https://app.protocolo45.com.br/login";
  * Gerar um novo no console do Railway:
  *   python -m app.admin invite --campaign meta-ads --max-uses 80 --days 60
  */
-// A API informou `expired` em 2026-10-19. Reativar somente após validar
-// um novo convite; o Hero também usa esta chave para não prometer acesso vencido.
-export const TRIAL_ENABLED = false;
-/** Último convite, expirado em 2026-10-19. */
-export const TRIAL_INVITE_TOKEN = "qhjnI-uQYHf-GDgGl0V0D8FILq30KX8RtzNky3f89C0";
+// Campanha criada pelo responsável e validada na API em 19/10/2026.
+// 200 cadastros, link válido até 16/02/2027; cada conta recebe 7 dias de teste.
+export const TRIAL_ENABLED = true;
+export const TRIAL_INVITE_TOKEN = "KpUEbVMHuB3GH8JSEmy0NtWORYdMOYNCVyQJUoZEANo";
 export const TRIAL_URL = `https://app.protocolo45.com.br/7dias?invite=${TRIAL_INVITE_TOKEN}`;
 
-/** Vagas restantes no convite, conferidas manualmente em 2026-08-04.
- * É o número exibido enquanto a leitura ao vivo não estiver ligada — por isso
- * precisa ser reconferido a cada campanha, senão envelhece e vira mentira. */
-export const TRIAL_SEATS_SEED = 80;
+/** Saldo conferido em 19/10/2026. Mantido para o componente antigo;
+ * a nova landing não anuncia quantidade de vagas nem usa escassez. */
+export const TRIAL_SEATS_SEED = 200;
 
 /** Base da API (Railway) para ler o saldo REAL de vagas e manter o contador
  * honesto sozinho — inclusive apagando a oferta se o convite vencer.
