@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   BookOpen,
   CalendarDays,
@@ -14,7 +14,7 @@ import {
   Shield,
   type LucideIcon,
 } from "lucide-react";
-import { LOGIN_URL } from "@/lib/constants";
+import { API_URL, LOGIN_URL } from "@/lib/constants";
 
 type Area =
   | "all"
@@ -53,55 +53,47 @@ const AREAS: {
   { id: "juridico", label: "Jurídico", icon: Scale },
 ];
 
-const MISSIONS: Mission[] = [
-  { name: "PC PR 2026", role: "Agente de Polícia Judiciária", area: "seguranca", board: "FGV", subjects: 13, status: "official", date: "11/10/2026" },
-  { name: "PC AL 2026", role: "Agente e Escrivão", area: "seguranca", board: "CEBRASPE", subjects: 15, status: "official", date: "06/12/2026" },
-  { name: "PM AL 2026/2027", role: "Soldado Combatente", area: "seguranca", board: "CEBRASPE", subjects: 11, status: "official", date: "17/01/2027" },
-  { name: "CBM AL 2026/2027", role: "Soldado Bombeiro Militar", area: "seguranca", board: "CEBRASPE", subjects: 11, status: "official", date: "24/01/2027" },
-  { name: "PM PE", role: "Soldado da Polícia Militar", area: "seguranca", board: "Instituto AOCP", subjects: 6, status: "forecast" },
-  { name: "PC PE", role: "Agente de Polícia", area: "seguranca", board: "CEBRASPE", subjects: 10, status: "forecast" },
-  { name: "PC PE", role: "Escrivão de Polícia", area: "seguranca", board: "CEBRASPE", subjects: 10, status: "forecast" },
-  { name: "Polícia Penal PE", role: "Policial Penal", area: "seguranca", board: "A definir", subjects: 12, status: "forecast" },
-  { name: "PRF", role: "Policial Rodoviário Federal", area: "seguranca", board: "CEBRASPE", subjects: 14, status: "forecast" },
-  { name: "PMDF", role: "Soldado Policial Militar", area: "seguranca", board: "A definir", subjects: 6, status: "forecast" },
-  { name: "PC BA 2026", role: "Investigador de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 14, status: "official", date: "06/12/2026" },
-  { name: "PC BA 2026", role: "Escrivão de Polícia Civil", area: "seguranca", board: "Instituto AOCP", subjects: 14, status: "official", date: "06/12/2026" },
-  { name: "Polícia Penal MS", role: "Policial Penal", area: "seguranca", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "INSS", role: "Técnico do Seguro Social", area: "administrativo", board: "A definir", subjects: 7, status: "forecast" },
-  { name: "IBGE", role: "Recenseador temporário", area: "administrativo", board: "A definir", subjects: 4, status: "forecast" },
-  { name: "Transpetro 2026", role: "Administração e Controle", area: "administrativo", board: "CESGRANRIO", subjects: 6, status: "official", date: "29/11/2026" },
-  { name: "Banco do Brasil", role: "Escriturário — Agente Comercial", area: "administrativo", board: "A definir", subjects: 8, status: "forecast" },
-  { name: "Receita Federal", role: "Auditor-Fiscal", area: "fiscal", board: "A definir", subjects: 17, status: "forecast" },
-  { name: "Receita Federal", role: "Analista-Tributário", area: "fiscal", board: "A definir", subjects: 11, status: "forecast" },
-  { name: "ANBIMA CPA", role: "Distribuição de investimentos", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
-  { name: "ANBIMA C-Pro I", role: "Investimentos", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
-  { name: "ANBIMA C-Pro R", role: "Relacionamento", area: "fiscal", board: "ANBIMA", subjects: 4, status: "scheduled" },
-  { name: "Banco do Brasil", role: "Escriturário — Agente de Tecnologia", area: "tecnologia", board: "A definir", subjects: 7, status: "forecast" },
-  { name: "ENEM 2026", role: "Exame Nacional do Ensino Médio", area: "enem", board: "INEP", subjects: 4, status: "official", date: "15/11/2026" },
-  { name: "SEDUC CE 2026", role: "Professor Nível C — Língua Portuguesa", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
-  { name: "SEDUC CE 2026", role: "Professor Nível C — Matemática", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
-  { name: "SEDUC CE 2026", role: "Professor Nível C — Educação Física", area: "educacao", board: "CEV/UECE (FUNECE)", subjects: 5, status: "official", date: "22/11/2026" },
-  { name: "SED MS", role: "Professor — Língua Portuguesa", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Matemática", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — História", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Geografia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Biologia / Ciências", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Física", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Química", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Filosofia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Sociologia", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Arte", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Educação Física", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "SED MS", role: "Professor — Língua Inglesa", area: "educacao", board: "A definir", subjects: 3, status: "forecast" },
-  { name: "48º Exame de Ordem", role: "OAB — primeira fase", area: "juridico", board: "FGV", subjects: 20, status: "official", date: "10/01/2027" },
-  { name: "AGU", role: "Advogado da União", area: "juridico", board: "A definir", subjects: 14, status: "forecast" },
-  { name: "TRF3", role: "Analista Judiciário — Área Judiciária", area: "juridico", board: "A definir", subjects: 11, status: "forecast" },
-  { name: "TRF3", role: "Técnico Judiciário — Área Administrativa", area: "juridico", board: "A definir", subjects: 9, status: "forecast" },
-];
+type CatalogTemplate = {
+  id: string;
+  nome: string;
+  cargo?: string | null;
+  category: string;
+  banca: string;
+  n_materias: number;
+  exam_date: string;
+  exam_date_status: "official" | "forecast" | "user_provided";
+};
+
+const AREA_BY_CATEGORY: Record<string, Exclude<Area, "all">> = {
+  seguranca_operacoes: "seguranca",
+  administrativo_previdenciario: "administrativo",
+  fiscal_controle: "fiscal",
+  educacao_humanas: "educacao",
+  enem: "enem",
+  tecnologia: "tecnologia",
+  juridico: "juridico",
+};
+
+function toMission(template: CatalogTemplate): Mission {
+  const status: MissionStatus = template.exam_date_status === "user_provided"
+    ? "scheduled"
+    : template.exam_date_status;
+  return {
+    name: template.nome,
+    role: template.cargo ?? "",
+    area: AREA_BY_CATEGORY[template.category] ?? "administrativo",
+    board: template.banca,
+    subjects: template.n_materias,
+    status,
+    date: status === "official"
+      ? new Date(`${template.exam_date}T12:00:00`).toLocaleDateString("pt-BR")
+      : undefined,
+  };
+}
 
 const STATUS = {
   official: {
-    label: "Data oficial",
+    label: "Data prevista no edital",
     className: "border-violet-400/20 bg-violet-400/10 text-violet-200",
   },
   forecast: {
@@ -153,6 +145,28 @@ export default function ContestCatalogSection() {
   const [area, setArea] = useState<Area>("all");
   const [query, setQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
+  const [catalog, setCatalog] = useState<Mission[] | null>(null);
+  const [catalogError, setCatalogError] = useState(false);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(`${API_URL}/public/contest-templates`, {
+      signal: controller.signal,
+      cache: "no-store",
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Catalog unavailable");
+        return response.json();
+      })
+      .then((body: { templates: CatalogTemplate[] }) => {
+        if (!Array.isArray(body.templates)) throw new Error("Invalid catalog");
+        setCatalog(body.templates.map(toMission));
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setCatalogError(true);
+      });
+    return () => controller.abort();
+  }, []);
 
   const missions = useMemo(() => {
     const needle = query
@@ -161,7 +175,7 @@ export default function ContestCatalogSection() {
       .trim()
       .toLowerCase();
 
-    return MISSIONS.filter(
+    return (catalog ?? []).filter(
       (mission) =>
         (area === "all" || mission.area === area) &&
         (!needle ||
@@ -171,7 +185,7 @@ export default function ContestCatalogSection() {
             .toLowerCase()
             .includes(needle)),
     );
-  }, [area, query]);
+  }, [area, catalog, query]);
 
   const filtering = area !== "all" || query.trim() !== "";
   const visible = showAll || filtering ? missions : preview(missions);
@@ -188,10 +202,12 @@ export default function ContestCatalogSection() {
             Veja se o Protocolo45 já está pronto para o seu concurso
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-            São {MISSIONS.length} missões já mapeadas — matérias, tópicos e pesos conforme a
-            fonte disponível — para o Motor P45 montar sua rota sem você
-            digitar nada. É o mapa do edital, não o material de estudo.
-            Escolha uma área ou busque pelo concurso.
+            {catalog === null
+              ? catalogError
+                ? "O catálogo está temporariamente indisponível."
+                : "Consultando as missões disponíveis no app..."
+              : `São ${catalog.length} missões disponíveis — matérias, tópicos e pesos conforme a fonte disponível — para o Motor P45 montar sua rota sem você digitar nada.`}
+            {" "}É o mapa do edital, não o material de estudo. Escolha uma área ou busque pelo concurso.
           </p>
         </div>
 
@@ -237,6 +253,12 @@ export default function ContestCatalogSection() {
               );
             })}
           </div>
+
+          {catalogError && (
+            <p role="status" className="mt-6 text-center text-sm text-[var(--text-secondary)]">
+              Não foi possível consultar as missões agora. Consulte o catálogo no app.
+            </p>
+          )}
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((mission) => {
@@ -287,7 +309,7 @@ export default function ContestCatalogSection() {
             </div>
           )}
 
-          {missions.length === 0 && (
+          {catalog !== null && missions.length === 0 && (
             <div className="mt-6 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-10 text-center">
               <p className="font-semibold text-white">
                 Essa missão ainda não aparece no catálogo.
@@ -318,7 +340,7 @@ export default function ContestCatalogSection() {
           </div>
 
           <p className="mt-4 text-center text-xs text-[var(--text-muted)]">
-            Catálogo atualizado em 8 de setembro de 2026. Em missões pré-edital,
+            Lista consultada no catálogo do app. Em missões pré-edital,
             o último conteúdo oficial serve como base e é revisado quando o novo
             edital é publicado.
           </p>
