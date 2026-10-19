@@ -34,7 +34,7 @@ export default function SalesLanding() {
               <span className="text-base font-bold tracking-tight sm:text-lg">Protocolo <span className="text-[#5c4185]">45</span></span>
             </a>
             <nav aria-label="Navegação principal" className="hidden items-center gap-7 text-sm font-medium text-[#5d6576] md:flex">
-              <a href="#produto">Como funciona</a><a href="#pricing">Planos</a><a href="#faq">Dúvidas</a>
+              <a href="#catalogo">Concursos</a><a href="#produto">Como funciona</a><a href="#pricing">Planos</a><a href="#faq">Dúvidas</a>
             </nav>
             <div className="flex items-center gap-4">
               <a href={LOGIN_URL} className="hidden text-sm font-semibold text-[#5c4185] sm:block">Entrar</a>
@@ -67,6 +67,8 @@ export default function SalesLanding() {
             </div>
           </section>
 
+          <CatalogLookup />
+
           <section id="produto" className="mx-auto max-w-6xl scroll-mt-6 px-5 py-10 sm:px-8 sm:py-14">
             <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <h2 className="max-w-md text-2xl font-bold tracking-tight sm:text-3xl">Menos tempo organizando.<br />Mais clareza para estudar.</h2>
@@ -79,7 +81,6 @@ export default function SalesLanding() {
                 <p className="mt-2 text-sm leading-relaxed text-[#5d6576]">{text}</p>
               </article>)}
             </div>
-            <CatalogLookup />
           </section>
 
           <section id="pricing" className="scroll-mt-6 border-y border-[#e7e1d9] bg-[#eee9f2] px-5 py-10 sm:px-8 sm:py-14">
