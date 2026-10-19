@@ -72,7 +72,7 @@ export default function HeroSection() {
             {/* Subheadline */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0"
+              className="hidden text-lg sm:block sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0"
             >
               O <span className="text-white font-semibold">PROTOCOLO 45</span>{" "}
               transforma seu edital, seu tempo disponível e seus resultados em
@@ -80,8 +80,14 @@ export default function HeroSection() {
               Você executa no material que já usa. Quando sua rotina muda, o
               Motor P45 recalcula a próxima rota.
             </motion.p>
-
-            <div className="mb-10" />
+            <motion.p
+              variants={itemVariants}
+              className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-[var(--text-secondary)] sm:hidden"
+            >
+              Seu edital vira uma missão clara para hoje: tópico, método e
+              tempo. O Motor P45 recalcula a rota conforme seus resultados e a
+              sua rotina.
+            </motion.p>
 
             {/* CTAs */}
             <motion.div

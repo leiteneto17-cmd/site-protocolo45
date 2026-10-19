@@ -34,8 +34,10 @@ export const LOGIN_URL = "https://app.protocolo45.com.br/login";
  * Gerar um novo no console do Railway:
  *   python -m app.admin invite --campaign meta-ads --max-uses 80 --days 60
  */
-export const TRIAL_ENABLED = true;
-/** Conferido `valid` em 2026-08-04. */
+// A API informou `expired` em 2026-10-19. Reativar somente após validar
+// um novo convite; o Hero também usa esta chave para não prometer acesso vencido.
+export const TRIAL_ENABLED = false;
+/** Último convite, expirado em 2026-10-19. */
 export const TRIAL_INVITE_TOKEN = "qhjnI-uQYHf-GDgGl0V0D8FILq30KX8RtzNky3f89C0";
 export const TRIAL_URL = `https://app.protocolo45.com.br/7dias?invite=${TRIAL_INVITE_TOKEN}`;
 
